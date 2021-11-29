@@ -68,7 +68,7 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement addProducte() method.
         $this->openConnection();
         try{
-            $statement = $this->conexio->prepare("INSERT INTO productes (referencia, titol, descripcio, imatge) VALUES(null,?,?,?)");
+            $statement = $this->conexio->prepare("INSERT INTO productes (referencia, titol, descripcio, imatge) VALUES(?,?,?,?)");
             $res = $statement->execute(
                 array($p->getReferencia(), $p->getTitol(), $p->getDescripcio(), $p->getImatge())
             );
@@ -103,14 +103,13 @@ class ProductesServiceImpl implements IProductesService
     {
         // TODO: Implement updateProducteById() method.
         try{
-            $querySql = "UPDATE productes SET titol=?, descripcio=?, imatge=? WHERE idProducte=?";
+            $querySql = "UPDATE productes SET titol=?, descripcio=?, imatge=? WHERE referencia=?";
             $statement = $this->conexio->prepare($querySql);
             $statement->execute(array(
-                $product->getRefProducte(),
-                $product->getDescProducte(),
-                $product->getPreuProducte(),
-                $product->getFotoProducte(),
-                $product->getIdProducte()
+                $p->getReferencia(),
+                $p->getTitol(),
+                $p->getDescripcio(),
+                $p->getImatge()
             ));
             return true;
         }catch(PDOException $ex){
@@ -119,8 +118,23 @@ class ProductesServiceImpl implements IProductesService
         }
     }
 
-    public function deleteProducteById($idProducte): bool
+    public function deleteProducteById($referencia): bool
     {
         // TODO: Implement deleteProducteById() method.
+        //$this->openConnection();
+        try{
+            $querySql = "DELETE FROM productes WHERE referencia=?";
+            $statement = $this->conexio->prepare($querySql);
+            $res = $statement->execute(array(
+                $referencia
+            ));
+
+            return $res;
+
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+            //  $this->closeConnection();
+        }
+        return false;
     }
 }
