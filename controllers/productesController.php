@@ -66,11 +66,21 @@ switch ($action){
         break;
     case 'edit':
         // editem producte
+        $producte = $_POST['referencia'] ?? null;
+
+        $con = new ProductesServiceImpl();
+
+        if (isset($producte)) {
+            $con->openConnection();
+            $con->updateProducteById($producte);
+            $con->closeConnection();
+            header('Location: ../views/main.php');
+        }
         break;
 
     case 'elimina':
         //esborrem producte
-        $referencia = $_POST['idProducte'] ?? null;
+        $referencia = $_POST['referencia'] ?? null;
 
         $con = new ProductesServiceImpl();
 

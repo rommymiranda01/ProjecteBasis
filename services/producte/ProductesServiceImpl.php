@@ -105,17 +105,13 @@ class ProductesServiceImpl implements IProductesService
         try{
             $querySql = "UPDATE productes SET titol=?, descripcio=?, imatge=? WHERE referencia=?";
             $statement = $this->conexio->prepare($querySql);
-            $statement->execute(array(
-                $p->getReferencia(),
-                $p->getTitol(),
-                $p->getDescripcio(),
-                $p->getImatge()
+            $res = $statement->execute(array($p->getTitol(), $p->getDescripcio(), $p->getImatge(), $p->getReferencia()
             ));
-            return true;
+            return $res;
         }catch(PDOException $ex){
             echo "Error: " . $ex;
-            return false;
         }
+        return false;
     }
 
     public function deleteProducteById($referencia): bool

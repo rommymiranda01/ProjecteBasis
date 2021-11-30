@@ -12,9 +12,6 @@ include ('../../model/Producte.php');
     <link rel="stylesheet" href="../css/registrarProducte.css">
     <title>Document</title>
 </head>
-<header>
-    <?php require_once ('../templates/navbar.php')?>
-</header>
 <body>
 <div class="container">
         <form action="../../controllers/productesController.php?action=add" enctype="multipart/form-data" method="post">

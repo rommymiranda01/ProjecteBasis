@@ -12,9 +12,9 @@
 </head>
 <body>
 <ul>
-    <li><a class="active" href="../main.php">Home</a></li>
+    <li><a class="active" href="../views/main.php">Home</a></li>
     <li><a href="producte/registrarProducte.php">Afegir Producte</a></li>
-    <li><a href="../login.php">Login</a></li>
+    <li><a href="../views/login.php">Login</a></li>
     <li><a href="#about">About</a></li>
 </ul>
 </body>
