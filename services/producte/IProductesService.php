@@ -7,6 +7,6 @@ interface IProductesService
     public function getAllProductes() : array;
     public function addProducte(Producte $p) : bool;
     public function getProducteById(String $referencia):Producte;
-    public function updateProducteById(Producte $p):bool;
+    public function updateProducte(Producte $p):bool;
     public function deleteProducteById($referencia):bool;
 }

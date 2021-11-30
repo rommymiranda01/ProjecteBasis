@@ -1,20 +1,9 @@
 <?php
-session_start();
-include ('../../model/Producte.php');
+//session_start();
+//include ('../../model/Producte.php');
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/registrarProducte.css">
-    <title>Document</title>
-</head>
-<body>
 <div class="container">
-        <form action="../../controllers/productesController.php?action=add" enctype="multipart/form-data" method="post">
+        <form action="../../controllers/productesController.php?action=save" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="referencia">Referencia</label>
@@ -53,6 +42,3 @@ include ('../../model/Producte.php');
         </div>
     </form>
 </div>
-
-</body>
-</html>

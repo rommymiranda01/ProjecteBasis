@@ -5,8 +5,15 @@ $action = $_GET['action'];
 
 $_SESSION["dades"] = $_POST;
 
+$con = new ProductesServiceImpl();
+$con->openConnection();
+
 switch ($action){
     case 'add':
+        $view = 'producte/registrarProducte.php';
+        include '../views/template.php';
+        break;
+    case 'save':
         // afegim el producte
         $_SESSION["dades"] = $_POST;
 
@@ -66,13 +73,17 @@ switch ($action){
         break;
     case 'edit':
         // editem producte
-        $producte = $_POST['referencia'] ?? null;
 
-        $con = new ProductesServiceImpl();
+        $referencia = (int)$_POST['referencia'] ?? null;
+        //die(var_dump($referencia));
+        $producte = $con->getProducteById($referencia);
+        $producte->setTitol($_POST['titol']);
+        //die(var_dump($producte));
+
 
         if (isset($producte)) {
-            $con->openConnection();
-            $con->updateProducteById($producte);
+
+            $con->updateProducte($producte);
             $con->closeConnection();
             header('Location: ../views/main.php');
         }
@@ -88,7 +99,15 @@ switch ($action){
             $con->openConnection();
             $con->deleteProducteById($referencia);
             $con->closeConnection();
-            header('Location: ../views/main.php');
+            //header('Location: ../views/main.php');
         }
+        break;
+
+    case 'list':
+        //logica...
+        $productes = array('id' => 1, 'nom' => 'NOm del productes');
+        $success = "tot ha anat bé!!!";
+        $view = 'producte/list.php';
+        include '../views/template.php';
         break;
 }

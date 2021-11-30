@@ -99,7 +99,7 @@ class ProductesServiceImpl implements IProductesService
         }
     }
 
-    public function updateProducteById(Producte $p): bool
+    public function updateProducte(Producte $p): bool
     {
         // TODO: Implement updateProducteById() method.
         try{
