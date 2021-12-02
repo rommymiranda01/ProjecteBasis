@@ -1,4 +1,5 @@
 <?php
+include_once '../helpers.php';
 include ('../model/Producte.php');
 include ('../services/producte/ProductesServiceImpl.php');
 $action = $_GET['action'];
@@ -57,7 +58,7 @@ switch ($action){
         }
 
         if ($_SESSION["errors"]){
-            header("Location: ../views/main.php");
+            //header("Location: ../views/main.php");
         }else {
             unset($_SESSION["dades"]);
             $serviceProduct = new ProductesServiceImpl();
@@ -67,7 +68,7 @@ switch ($action){
                 $prod = new Producte( $_POST['referencia'], $_POST['titol'], $_POST['descripcio'], $_FILES['foto']['name']);
                 $serviceProduct->addProducte($prod);
                 $_SESSION["resultStore"] = "Producte afegit correctament";
-                header('Location: ../controllers/listProductController.php');
+                header('Location: ../controllers/productesController.php?action=list');
             }
         }
         break;
@@ -78,14 +79,14 @@ switch ($action){
         //die(var_dump($referencia));
         $producte = $con->getProducteById($referencia);
         $producte->setTitol($_POST['titol']);
+        $producte->setDescripcio($_POST['descripcio']);
         //die(var_dump($producte));
 
 
         if (isset($producte)) {
-
             $con->updateProducte($producte);
-            $con->closeConnection();
-            header('Location: ../views/main.php');
+            //$con->closeConnection();
+            header('Location: ../controllers/productesController.php?action=list');
         }
         break;
 
@@ -96,16 +97,15 @@ switch ($action){
         $con = new ProductesServiceImpl();
 
         if (isset($referencia)) {
-            $con->openConnection();
             $con->deleteProducteById($referencia);
-            $con->closeConnection();
-            //header('Location: ../views/main.php');
+            //$con->closeConnection();
+            header('Location: ../controllers/productesController.php?action=list');
         }
         break;
 
     case 'list':
         //logica...
-        $productes = array('id' => 1, 'nom' => 'NOm del productes');
+        $productes = $con->getAllProductes();
         $success = "tot ha anat bé!!!";
         $view = 'producte/list.php';
         include '../views/template.php';

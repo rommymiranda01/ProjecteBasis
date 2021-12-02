@@ -83,6 +83,7 @@ class ProductesServiceImpl implements IProductesService
     public function getProducteById($referencia): Producte
     {
         // TODO: Implement getProducteById() method.
+        $this->openConnection();
         $producte = null;
         try{
 
@@ -95,13 +96,15 @@ class ProductesServiceImpl implements IProductesService
             return $producte;
         }catch(PDOException $ex){
             echo "Error: " . $ex;
-            return $producte;
         }
+        $this->closeConnection();
+        return $producte;
     }
 
     public function updateProducte(Producte $p): bool
     {
         // TODO: Implement updateProducteById() method.
+        $this->openConnection();
         try{
             $querySql = "UPDATE productes SET titol=?, descripcio=?, imatge=? WHERE referencia=?";
             $statement = $this->conexio->prepare($querySql);
@@ -111,13 +114,14 @@ class ProductesServiceImpl implements IProductesService
         }catch(PDOException $ex){
             echo "Error: " . $ex;
         }
+        $this->closeConnection();
         return false;
     }
 
     public function deleteProducteById($referencia): bool
     {
         // TODO: Implement deleteProducteById() method.
-        //$this->openConnection();
+        $this->openConnection();
         try{
             $querySql = "DELETE FROM productes WHERE referencia=?";
             $statement = $this->conexio->prepare($querySql);
@@ -129,8 +133,8 @@ class ProductesServiceImpl implements IProductesService
 
         }catch(PDOException $ex){
             echo "Error: " . $ex;
-            //  $this->closeConnection();
         }
+        $this->closeConnection();
         return false;
     }
 }

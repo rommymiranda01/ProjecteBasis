@@ -11,7 +11,6 @@ $con->openConnection();
 if (isset($referencia)){
     $producte = $con->getProducteById($referencia);
 }
-//echo $producte;
 ?>
 <!doctype html>
 <html lang="en">

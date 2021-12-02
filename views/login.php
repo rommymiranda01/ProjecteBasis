@@ -1,6 +1,6 @@
 <?php
-session_start();
-include_once ('../model/Client.php');
+//session_start();
+//include_once ('../model/Client.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +14,7 @@ include_once ('../model/Client.php');
 </head>
 <body>
 <div class="wrapper">
-    <form class="login" method="post" action="producte/registrarProducte.php">
+    <form class="login" method="post" action="main.php">
         <p class="title">Log in</p>
         <input type="text" placeholder="Username" autofocus/>
         <i class="fa fa-user"></i>
