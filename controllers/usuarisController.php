@@ -1,10 +1,11 @@
 <?php
+include_once '../helpers.php';
 include ('../model/Client.php');
-//include ('../services/client/');
+include ('../services/client/ClientsServiceImpl.php');
 $action = $_GET['action'];
 
-//$con = new ProductesServiceImpl();
-//$con->openConnection();
+$con = new ClientsServiceImpl();
+$con->openConnection();
 
 switch ($action) {
     case 'login':
@@ -15,5 +16,11 @@ switch ($action) {
     case 'logout':
         //unset();
         //header('Location: ../controllers/usuarisController.php?action=login');
+        break;
+
+    case 'llista':
+        $clients = $con->getAllUsers();
+        $view = 'client/llista.php';
+        include '../views/template.php';
         break;
 }

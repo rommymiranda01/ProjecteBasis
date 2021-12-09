@@ -56,3 +56,11 @@ img {
 .container {
     padding: 2px 16px;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+}
