@@ -61,13 +61,12 @@ switch ($action){
             header('Location: ../controllers/productesController.php?action=add');
         }else {
             unset($_SESSION["dades"]);
-            $serviceProduct = new ProductesServiceImpl();
             $fullPath = $dstFolder . basename($_FILES['foto']["name"]);
             $res = move_uploaded_file($_FILES['foto']['tmp_name'], $fullPath);
             if ($res) {
                 $prod = new Producte( $_POST['referencia'], $_POST['titol'], $_POST['descripcio'], $_FILES['foto']['name']);
-                $serviceProduct->addProducte($prod);
-                $_SESSION["resultStore"] = "Producte afegit correctament";
+                $con->addProducte($prod);
+                //$_SESSION["resultStore"] = "Producte afegit correctament";
                 header('Location: ../controllers/productesController.php?action=list');
             }
         }
@@ -97,8 +96,6 @@ switch ($action){
     case 'elimina':
         //esborrem producte
         $referencia = $_POST['referencia'] ?? null;
-
-        $con = new ProductesServiceImpl();
 
         if (isset($referencia)) {
             $con->deleteProducteById($referencia);
