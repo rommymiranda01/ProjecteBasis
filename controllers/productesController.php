@@ -4,7 +4,7 @@ include ('../model/Producte.php');
 include ('../services/producte/ProductesServiceImpl.php');
 $action = $_GET['action'];
 
-$_SESSION["dades"] = $_POST;
+//$_SESSION["dades"] = $_POST;
 
 $con = new ProductesServiceImpl();
 $con->openConnection();

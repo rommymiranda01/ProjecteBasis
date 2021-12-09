@@ -13,6 +13,7 @@
                 <?php
                 if(isset($_SESSION['msgErrorRef'])){
                     echo "'<small id='flashErrorRef' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorRef'] ."</strong></small>";
+                    unset($_SESSION['msgErrorRef']);
                 }
                 ?>
             </div>
@@ -26,6 +27,7 @@
                 <?php
                 if(isset($_SESSION['msgErrorTitol'])){
                     echo "'<small id='flashErrorTitol' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTitol'] ."</strong></small>";
+                    unset($_SESSION['msgErrorTitol']);
                 }
                 ?>
             </div>
@@ -39,6 +41,7 @@
                 <?php
                 if(isset($_SESSION['msgErrorDesc'])){
                     echo "'<small id='flashErrorDesc' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDesc'] ."</strong></small>";
+                    unset($_SESSION['msgErrorDesc']);
                 }
                 ?>
             </div>
@@ -52,6 +55,7 @@
                 <?php
                 if(isset($_SESSION['msgErrorFoto'])){
                     echo "'<small id='flashErrorFoto' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorFoto'] ."</strong></small>";
+                    unset($_SESSION['msgErrorFoto']);
                 }
                 ?>
             </div>

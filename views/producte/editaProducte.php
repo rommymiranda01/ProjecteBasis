@@ -42,6 +42,7 @@ if (isset($referencia)){
                 <?php
                 if(isset($_SESSION['msgErrorTitol'])){
                     echo "'<small id='flashErrorTitol' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTitol'] ."</strong></small>";
+                    unset($_SESSION['msgErrorTitol']);
                 }
                 ?>
             </div>
@@ -55,6 +56,7 @@ if (isset($referencia)){
                 <?php
                 if(isset($_SESSION['msgErrorDesc'])){
                     echo "'<small id='flashErrorDesc' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDesc'] ."</strong></small>";
+                    unset($_SESSION['msgErrorDesc']);
                 }
                 ?>
             </div>
