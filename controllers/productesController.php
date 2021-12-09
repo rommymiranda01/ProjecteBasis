@@ -26,12 +26,12 @@ switch ($action){
         }
 
         if (!isset($_POST['titol']) || empty($_POST["titol"])){
-            $_SESSION['msgErrorDesc'] = 'Si us plau omple el camp corresponent al titol';
+            $_SESSION['msgErrorTitol'] = 'Si us plau omple el camp corresponent al titol';
             $_SESSION['errors']=true;
         }
 
         if (!isset($_POST['descripcio']) || empty($_POST["descripcio"])){
-            $_SESSION['msgErrorPreu'] = 'Si us plau omple el camp corresponent a la descripcio';
+            $_SESSION['msgErrorDesc'] = 'Si us plau omple el camp corresponent a la descripcio';
             $_SESSION['errors']=true;
         }
 
@@ -58,7 +58,7 @@ switch ($action){
         }
 
         if ($_SESSION["errors"]){
-            //header("Location: ../views/main.php");
+            header('Location: ../controllers/productesController.php?action=add');
         }else {
             unset($_SESSION["dades"]);
             $serviceProduct = new ProductesServiceImpl();

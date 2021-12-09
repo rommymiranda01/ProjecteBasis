@@ -11,4 +11,9 @@ switch ($action) {
         $view = 'login.php';
         include '../views/template.php';
         break;
+
+    case 'logout':
+        //unset();
+        //header('Location: ../controllers/usuarisController.php?action=login');
+        break;
 }

@@ -10,6 +10,11 @@
             </div>
             <div class="col-75">
                 <input type="text" id="referencia" name="referencia" placeholder="Referencia..">
+                <?php
+                if(isset($_SESSION['msgErrorRef'])){
+                    echo "'<small id='flashErrorRef' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorRef'] ."</strong></small>";
+                }
+                ?>
             </div>
         </div>
         <div class="row">
@@ -18,6 +23,11 @@
             </div>
             <div class="col-75">
                 <input type="text" id="titol" name="titol" placeholder="Titol..">
+                <?php
+                if(isset($_SESSION['msgErrorTitol'])){
+                    echo "'<small id='flashErrorTitol' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTitol'] ."</strong></small>";
+                }
+                ?>
             </div>
         </div>
         <div class="row">
@@ -26,6 +36,11 @@
             </div>
             <div class="col-75">
                 <input type="text" id="descripcio" name="descripcio" placeholder="Descripcio..">
+                <?php
+                if(isset($_SESSION['msgErrorDesc'])){
+                    echo "'<small id='flashErrorDesc' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDesc'] ."</strong></small>";
+                }
+                ?>
             </div>
         </div>
         <div class="row">
@@ -34,6 +49,11 @@
             </div>
             <div class="col-75">
                 <input type="file" class="form-control-file" id="foto" name="foto" value="<?php echo $_SESSION['dades']['foto'] ?? '' ?>">
+                <?php
+                if(isset($_SESSION['msgErrorFoto'])){
+                    echo "'<small id='flashErrorFoto' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorFoto'] ."</strong></small>";
+                }
+                ?>
             </div>
         </div>
         <br>

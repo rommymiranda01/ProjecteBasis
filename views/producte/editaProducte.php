@@ -49,14 +49,6 @@ if (isset($referencia)){
                 <input type="text" id="descripcio" name="descripcio" placeholder="Descripcio.." value="<?php echo $producte->getDescripcio() ?? '' ?>">
             </div>
         </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="foto">Foto</label>
-            </div>
-            <div class="col-75">
-                <input type="file" class="form-control-file" id="foto" name="foto" value="<?php echo $producte->getImatge() ?? '' ?>">
-            </div>
-        </div>
         <br>
         <div class="row">
             <input type="submit" value="Edita">
