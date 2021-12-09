@@ -1,7 +1,7 @@
 <?php
-session_start();
-include ('../../model/Producte.php');
-include '../../services/producte/ProductesServiceImpl.php';
+//session_start();
+//include ('../../model/Producte.php');
+//include '../../services/producte/ProductesServiceImpl.php';
 
 $referencia = $_POST['referencia'] ?? null;
 
@@ -24,7 +24,7 @@ if (isset($referencia)){
 </head>
 <body>
 <div class="container">
-    <form action="../../controllers/productesController.php?action=edit" enctype="multipart/form-data" method="post">
+    <form action="../../controllers/productesController.php?action=editSave" enctype="multipart/form-data" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="referencia">Referencia</label>

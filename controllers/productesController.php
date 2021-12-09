@@ -73,6 +73,10 @@ switch ($action){
         }
         break;
     case 'edit':
+        $view = 'producte/editaProducte.php';
+        include '../views/template.php';
+        break;
+    case 'editSave':
         // editem producte
 
         $referencia = (int)$_POST['referencia'] ?? null;
