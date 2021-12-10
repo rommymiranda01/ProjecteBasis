@@ -12,19 +12,8 @@ if (isset($referencia)){
     $producte = $con->getProducteById($referencia);
 }
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/registrarProducte.css">
-    <title>Edita Producte</title>
-</head>
-<body>
 <div class="container">
-    <form action="../../controllers/productesController.php?action=editSave" enctype="multipart/form-data" method="post">
+    <form action="../../controllers/productesController.php?action=editSave" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="referencia">Referencia</label>
@@ -68,6 +57,3 @@ if (isset($referencia)){
         <a href="../../controllers/productesController.php?action=list">Torna</a>
     </form>
 </div>
-
-</body>
-</html>

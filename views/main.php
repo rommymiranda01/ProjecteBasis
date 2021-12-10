@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Main</title>
 </head>
-<header>
-    <?php require_once ('templates/navbar.php')?>
-</header>
 <body>
+<header><h1>Web</h1></header>
+<nav>
+    <?php
+    include 'templates/navbar.php';
+    ?>
+</nav>
 <h1>En construcció</h1>
-
 </body>
 </html>

@@ -5,10 +5,10 @@ include ('../model/Producte.php');
 include ('../services/producte/ProductesServiceImpl.php');
 $action = $_GET['action'];
 
-//$_SESSION["dades"] = $_POST;
-
 $con = new ProductesServiceImpl();
 $con->openConnection();
+
+$_SESSION["errors"] = false;
 
 switch ($action){
     case 'add':
@@ -18,8 +18,6 @@ switch ($action){
     case 'save':
         // afegim el producte
         $_SESSION["dades"] = $_POST;
-
-        $_SESSION["errors"] = false;
 
         if (!isset($_POST['referencia']) || empty($_POST["referencia"])){
             $_SESSION['msgErrorRef'] = 'Si us plau omple el camp corresponent a la referència';
@@ -80,18 +78,29 @@ switch ($action){
     case 'editSave':
         // editem producte
 
-        $referencia = (int)$_POST['referencia'] ?? null;
-        //die(var_dump($referencia));
-        $producte = $con->getProducteById($referencia);
-        $producte->setTitol($_POST['titol']);
-        $producte->setDescripcio($_POST['descripcio']);
-        //die(var_dump($producte));
+        if (!isset($_POST['titol']) || empty($_POST["titol"])){
+            $_SESSION['msgErrorTitol'] = 'Si us plau omple el camp corresponent al titol';
+            $_SESSION['errors']=true;
+        }
 
-
-        if (isset($producte)) {
-            $con->updateProducte($producte);
-            //$con->closeConnection();
-            header('Location: ../controllers/productesController.php?action=list');
+        if (!isset($_POST['descripcio']) || empty($_POST["descripcio"])){
+            $_SESSION['msgErrorDesc'] = 'Si us plau omple el camp corresponent a la descripcio';
+            $_SESSION['errors']=true;
+        }
+        if ($_SESSION["errors"]){
+            //die(var_dump($_SESSION));
+            header('Location: ../controllers/productesController.php?action=edit');
+        }else {
+            $referencia = (int)$_POST['referencia'] ?? null;
+            //die(var_dump($referencia));
+            $producte = $con->getProducteById($referencia);
+            $producte->setTitol($_POST['titol']);
+            $producte->setDescripcio($_POST['descripcio']);
+            //die(var_dump($producte));
+            if (isset($producte)) {
+                $con->updateProducte($producte);
+                header('Location: ../controllers/productesController.php?action=list');
+            }
         }
         break;
 
