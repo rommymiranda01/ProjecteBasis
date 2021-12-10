@@ -13,8 +13,14 @@ foreach ($clients as $c){
         <th>Foto</th>
     </tr>
     <tr>
-        <td>Peter</td>
-        <td>Griffin</td>
+        <td><?php echo $c['dni']?></td>
+        <td><?php echo $c['nom']?></td>
+        <td><?php echo $c['adreca']?></td>
+        <td><?php echo $c['codPostal']?></td>
+        <td><?php echo $c['poble']?></td>
+        <td><?php echo $c['email']?></td>
+        <td><?php echo $c['telefon']?></td>
+        <td><?php echo $c['foto']?></td>
     </tr>
 </table>
 <?php

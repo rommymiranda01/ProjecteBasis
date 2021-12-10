@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../helpers.php';
 include ('../model/Producte.php');
 include ('../services/producte/ProductesServiceImpl.php');
@@ -58,6 +59,7 @@ switch ($action){
         }
 
         if ($_SESSION["errors"]){
+            //die(var_dump($_SESSION));
             header('Location: ../controllers/productesController.php?action=add');
         }else {
             unset($_SESSION["dades"]);

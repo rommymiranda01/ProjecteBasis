@@ -23,4 +23,7 @@ switch ($action) {
         $view = 'client/llista.php';
         include '../views/template.php';
         break;
+
+    case 'add':
+        $view = 'client/registraClient.php';
 }
