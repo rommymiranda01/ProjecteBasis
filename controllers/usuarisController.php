@@ -8,6 +8,8 @@ $action = $_GET['action'];
 $con = new ClientsServiceImpl();
 $con->openConnection();
 
+$_SESSION["errors"] = false;
+
 switch ($action) {
     case 'login':
         $view = 'login.php';
@@ -19,7 +21,7 @@ switch ($action) {
         header('Location: ../views/login.php');
         break;
 
-    case 'llista':
+    case 'list':
         $clients = $con->getAllUsers();
         $view = 'client/llista.php';
         include '../views/template.php';
@@ -32,21 +34,40 @@ switch ($action) {
     case 'save':
         $_SESSION["dades"] = $_POST;
 
-        if (!isset($_POST['referencia']) || empty($_POST["referencia"])){
-            $_SESSION['msgErrorRef'] = 'Si us plau omple el camp corresponent a la referència';
+        if (!isset($_POST['dni']) || empty($_POST["dni"])){
+            $_SESSION['msgErrorDni'] = 'Si us plau omple el camp corresponent al dni';
             $_SESSION['errors']=true;
         }
 
-        if (!isset($_POST['titol']) || empty($_POST["titol"])){
-            $_SESSION['msgErrorTitol'] = 'Si us plau omple el camp corresponent al titol';
+        if (!isset($_POST['nom']) || empty($_POST["nom"])){
+            $_SESSION['msgErrorTitol'] = 'Si us plau omple el camp corresponent al nom';
             $_SESSION['errors']=true;
         }
 
-        if (!isset($_POST['descripcio']) || empty($_POST["descripcio"])){
-            $_SESSION['msgErrorDesc'] = 'Si us plau omple el camp corresponent a la descripcio';
+        if (!isset($_POST['adreca']) || empty($_POST["adreca"])){
+            $_SESSION['msgErrorAdreca'] = 'Si us plau omple el camp corresponent a la adreça';
             $_SESSION['errors']=true;
         }
 
+        if (!isset($_POST['codPostal']) || empty($_POST["codPostal"])){
+            $_SESSION['msgErrorCodPostal'] = 'Si us plau omple el camp corresponent al codi postal';
+            $_SESSION['errors']=true;
+        }
+
+        if (!isset($_POST['poble']) || empty($_POST["poble"])){
+            $_SESSION['msgErrorPoble'] = 'Si us plau omple el camp corresponent al poble';
+            $_SESSION['errors']=true;
+        }
+
+        if (!isset($_POST['email']) || empty($_POST["email"])){
+            $_SESSION['msgErrorEmail'] = 'Si us plau omple el camp corresponent al email';
+            $_SESSION['errors']=true;
+        }
+
+        if (!isset($_POST['telefon']) || empty($_POST["telefon"])){
+            $_SESSION['msgErrorTelefon'] = 'Si us plau omple el camp corresponent al telefon';
+            $_SESSION['errors']=true;
+        }
 
         $fTemp = $_FILES['foto']['tmp_name'];
         if (empty($fTemp)){
@@ -60,27 +81,19 @@ switch ($action) {
             if (!$size){
                 $_SESSION['msgErrorFoto'] = "Si us plau adjunta una imatge i no altre tipus de fitxer";
                 $_SESSION['errors'] = true;
-            }else{
-                $dif = abs($size[0] - $size[1]);
-                if ($dif > 100){
-                    $_SESSION["msgErrorFoto"] = "Si us plau introdueix una imatge quadrada";
-                    $_SESSION["errors"] = true;
-                }
             }
         }
 
         if ($_SESSION["errors"]){
-            //die(var_dump($_SESSION));
-            header('Location: ../controllers/productesController.php?action=add');
+            header('Location: ../controllers/usuarisController.php?action=add');
         }else {
             unset($_SESSION["dades"]);
             $fullPath = $dstFolder . basename($_FILES['foto']["name"]);
             $res = move_uploaded_file($_FILES['foto']['tmp_name'], $fullPath);
             if ($res) {
-                $prod = new Producte( $_POST['referencia'], $_POST['titol'], $_POST['descripcio'], $_FILES['foto']['name']);
-                $con->addProducte($prod);
-                //$_SESSION["resultStore"] = "Producte afegit correctament";
-                header('Location: ../controllers/productesController.php?action=list');
+                $c = new Client( $_POST['dni'], $_POST['nom'], $_POST['adreca'], $_POST['codPostal'], $_POST['poble'], $_POST['email'], $_POST['telefon'], $_FILES['foto']['name']);
+                $con->addUser($c);
+                header('Location: ../controllers/usuarisController.php?action=list');
             }
         }
         break;
