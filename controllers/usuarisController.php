@@ -40,7 +40,7 @@ switch ($action) {
         }
 
         if (!isset($_POST['nom']) || empty($_POST["nom"])){
-            $_SESSION['msgErrorTitol'] = 'Si us plau omple el camp corresponent al nom';
+            $_SESSION['msgErrorNom'] = 'Si us plau omple el camp corresponent al nom';
             $_SESSION['errors']=true;
         }
 
