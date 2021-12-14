@@ -79,19 +79,62 @@ class ClientsServiceImpl implements IClientsService
         return false;
     }
 
-    public function getUserById($idClient): Client
+    public function getUserById($dni): Client
     {
         // TODO: Implement getUserById() method.
+        $this->openConnection();
+        $client = null;
+        try{
+
+            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE dni= ?");
+            $statement->execute(
+                array($dni)
+            );
+            $result = $statement->fetch();
+            $client = new Client($result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto']);
+            return $client;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return $client;
     }
 
     public function updateUserById(Client $c): bool
     {
         // TODO: Implement updateUserById() method.
+        $this->openConnection();
+        try{
+            $querySql = "UPDATE clients SET nom=?, adreca=?, codPostal=?, poble=?, email=?, telefon=?, foto=? WHERE dni=?";
+            $statement = $this->conexio->prepare($querySql);
+            $res = $statement->execute(array($c->getNom(),$c->getAdreca(), $c->getCodPostal(), $c->getPoble(), $c->getEmail(), $c->getTelefon(), $c->getFoto(), $c->getDni()
+            ));
+            return $res;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return false;
     }
 
-    public function deleteUserById($idClient): bool
+    public function deleteUserById($dni): bool
     {
         // TODO: Implement deleteUserById() method.
+        $this->openConnection();
+        try{
+            $querySql = "DELETE FROM clients WHERE dni=?";
+            $statement = $this->conexio->prepare($querySql);
+            $res = $statement->execute(array(
+                $dni
+            ));
+
+            return $res;
+
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return false;
     }
 
     /*public function checkCreds(Client $c): ?array

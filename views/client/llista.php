@@ -25,8 +25,16 @@ foreach ($clients as $c){
         <td><?php echo $c['foto']?></td>
 <!--        Imatge completa             -->
 <!--        <td><img src="--><?//=base_url();?><!--/views/client/img/--><?php //echo $c['foto']?><!--" alt="img"></td>-->
-        <td><a href="../../controllers/usuarisController.php?action=edit">Edita</a>
-            <a href="../../controllers/usuarisController.php?action=elimina">Esborra</a></td>
+        <td>
+            <form action="../../controllers/usuarisController.php?action=edit" method="post">
+                <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
+                <input type="submit" class="btn btn-danger" value="Edita">
+            </form>
+
+            <form action="../../controllers/usuarisController.php?action=elimina" method="post">
+                <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
+                <input type="submit" class="btn btn-danger" value="Elimina">
+            </form>
     </tr>
 </table>
 <?php
