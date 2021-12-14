@@ -1,7 +1,4 @@
 <?php
-//session_start();
-//include ('../../model/Producte.php');
-//include '../../services/producte/ProductesServiceImpl.php';
 
 $referencia = $_POST['referencia'] ?? null;
 
