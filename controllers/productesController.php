@@ -72,11 +72,19 @@ switch ($action){
         }
         break;
     case 'edit':
+
         $view = 'producte/editaProducte.php';
         include '../views/template.php';
         break;
     case 'editSave':
         // editem producte
+
+        $referencia = $_POST['referencia'] ?? null;
+        //die(var_dump($referencia));
+        $producte = $con->getProducteById($referencia);
+        $producte->setTitol($_POST['titol']);
+        $producte->setDescripcio($_POST['descripcio']);
+        //die(var_dump($producte));
 
         if (!isset($_POST['titol']) || empty($_POST["titol"])){
             $_SESSION['msgErrorTitol'] = 'Si us plau omple el camp corresponent al titol';
@@ -90,18 +98,11 @@ switch ($action){
         if ($_SESSION["errors"]){
             //die(var_dump($_SESSION));
             header('Location: ../controllers/productesController.php?action=edit');
-        }else {
-            $referencia = (int)$_POST['referencia'] ?? null;
-            //die(var_dump($referencia));
-            $producte = $con->getProducteById($referencia);
-            $producte->setTitol($_POST['titol']);
-            $producte->setDescripcio($_POST['descripcio']);
-            //die(var_dump($producte));
+        }
             if (isset($producte)) {
                 $con->updateProducte($producte);
                 header('Location: ../controllers/productesController.php?action=list');
             }
-        }
         break;
 
     case 'elimina':
@@ -110,7 +111,6 @@ switch ($action){
 
         if (isset($referencia)) {
             $con->deleteProducteById($referencia);
-            //$con->closeConnection();
             header('Location: ../controllers/productesController.php?action=list');
         }
         break;

@@ -97,4 +97,21 @@ switch ($action) {
             }
         }
         break;
+
+    case 'edit':
+        $view = 'client/editaClient.php';
+        include '../views/template.php';
+        break;
+
+    case 'editSave':
+        break;
+
+    case 'elimina':
+        $dni = $_POST['dni'] ?? null;
+
+        if (isset($dni)){
+            $con->deleteUserById($dni);
+            header('Location: ../controllers/usuarisController.php?action=list');
+        }
+        break;
 }

@@ -7,7 +7,6 @@ $referencia = $_POST['referencia'] ?? null;
 
 $con = new ProductesServiceImpl();
 
-$con->openConnection();
 if (isset($referencia)){
     $producte = $con->getProducteById($referencia);
 }
@@ -27,10 +26,10 @@ if (isset($referencia)){
                 <label for="titol">Titol</label>
             </div>
             <div class="col-75">
-                <input type="text" id="titol" name="titol" placeholder="Titol.." value="<?php echo $producte->getTitol() ?? '' ?>">
+                <input type="text" id="titol" name="titol" placeholder="Titol.." value="<?php echo $producte->getTitol() ?? '' ?>"><br>
                 <?php
                 if(isset($_SESSION['msgErrorTitol'])){
-                    echo "'<small id='flashErrorTitol' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTitol'] ."</strong></small>";
+                    echo "<small id='flashErrorTitol' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTitol'] ."</strong></small>";
                     unset($_SESSION['msgErrorTitol']);
                 }
                 ?>
@@ -41,10 +40,10 @@ if (isset($referencia)){
                 <label for="descripcio">Descripcio</label>
             </div>
             <div class="col-75">
-                <input type="text" id="descripcio" name="descripcio" placeholder="Descripcio.." value="<?php echo $producte->getDescripcio() ?? '' ?>">
+                <input type="text" id="descripcio" name="descripcio" placeholder="Descripcio.." value="<?php echo $producte->getDescripcio() ?? '' ?>"><br>
                 <?php
                 if(isset($_SESSION['msgErrorDesc'])){
-                    echo "'<small id='flashErrorDesc' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDesc'] ."</strong></small>";
+                    echo "<small id='flashErrorDesc' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDesc'] ."</strong></small>";
                     unset($_SESSION['msgErrorDesc']);
                 }
                 ?>

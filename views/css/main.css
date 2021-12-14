@@ -254,3 +254,12 @@ body {
         padding-left: 25px;
     }
 }
+
+footer{
+    display: flex;
+    /*background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);*/
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

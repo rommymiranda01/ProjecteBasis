@@ -11,6 +11,7 @@ foreach ($clients as $c){
         <th>Email</th>
         <th>Telefon</th>
         <th>Foto</th>
+        <th>Opcions</th>
     </tr>
     <tr>
         <td><?php echo $c['dni']?></td>
@@ -20,7 +21,12 @@ foreach ($clients as $c){
         <td><?php echo $c['poble']?></td>
         <td><?php echo $c['email']?></td>
         <td><?php echo $c['telefon']?></td>
+<!--        Imatge només text           -->
         <td><?php echo $c['foto']?></td>
+<!--        Imatge completa             -->
+<!--        <td><img src="--><?//=base_url();?><!--/views/client/img/--><?php //echo $c['foto']?><!--" alt="img"></td>-->
+        <td><a href="../../controllers/usuarisController.php?action=edit">Edita</a>
+            <a href="../../controllers/usuarisController.php?action=elimina">Esborra</a></td>
     </tr>
 </table>
 <?php
