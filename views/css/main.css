@@ -11,7 +11,7 @@ body {
 
 footer{
     display: flex;
-    /*background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);*/
+    background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);
     width: 100%;
     position: marker;
     bottom: 0;
@@ -64,11 +64,12 @@ li a:hover:not(.active) {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
+    width: 30%;
     border-radius: 5px;
     margin-top: 10px;
     float: left;
-    margin-left: 5%;
+    margin-left: 3%;
+    margin-bottom: 10px;
 }
 
 .containerCard{

@@ -20,4 +20,7 @@
 </nav>
 <h1>En construcció</h1>
 </body>
+<footer>
+    <p>Rommy Miranda</p>
+</footer>
 </html>
