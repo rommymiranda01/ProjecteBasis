@@ -97,6 +97,25 @@ img {
 }
 .registra:hover { background:#04AA6D; }
 
+.edita{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background:#04AA6D;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+}
+
+.edita:hover{
+    background:#04AA6D;
+}
 
 /*Taula llista Clients*/
 table, th, td {

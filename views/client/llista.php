@@ -31,12 +31,12 @@ foreach ($clients as $c){
                 <td>
                 <form action="../../controllers/usuarisController.php?action=edit" method="post">
                     <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
-                    <input type="submit" class="edita" value="Edita">
+                    <input type="submit" value="Edita">
                 </form>
 
                 <form action="../../controllers/usuarisController.php?action=elimina" method="post">
                     <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
-                    <input type="submit" class="elimina" value="Elimina">
+                    <input type="submit" value="Elimina">
                 </form>
             </tr>
         </tbody>

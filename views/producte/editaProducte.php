@@ -15,7 +15,7 @@ if (isset($referencia)){
                 <label for="referencia">Referencia</label>
             </div>
             <div class="col-75">
-                <input type="text" id="referencia" name="referencia" placeholder="Referencia.." value="<?php echo $producte->getReferencia() ?? '' ?>" readonly>
+                <input type="text" id="referencia" name="referencia" placeholder="Referencia.." value="<?php echo $producte->getReferencia() ?? '' ?>" readonly class="feedback-input">
             </div>
         </div>
         <div class="row">
@@ -23,7 +23,7 @@ if (isset($referencia)){
                 <label for="titol">Titol</label>
             </div>
             <div class="col-75">
-                <input type="text" id="titol" name="titol" placeholder="Titol.." value="<?php echo $producte->getTitol() ?? '' ?>"><br>
+                <input type="text" id="titol" name="titol" placeholder="Titol.." value="<?php echo $producte->getTitol() ?? '' ?>" class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorTitol'])){
                     echo "<small id='flashErrorTitol' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTitol'] ."</strong></small>";
@@ -37,7 +37,7 @@ if (isset($referencia)){
                 <label for="descripcio">Descripcio</label>
             </div>
             <div class="col-75">
-                <input type="text" id="descripcio" name="descripcio" placeholder="Descripcio.." value="<?php echo $producte->getDescripcio() ?? '' ?>"><br>
+                <input type="text" id="descripcio" name="descripcio" placeholder="Descripcio.." value="<?php echo $producte->getDescripcio() ?? '' ?>" class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorDesc'])){
                     echo "<small id='flashErrorDesc' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDesc'] ."</strong></small>";
@@ -48,8 +48,8 @@ if (isset($referencia)){
         </div>
         <br>
         <div class="row">
-            <input type="submit" value="Edita">
+            <input type="submit" class="edita" value="Edita">
         </div>
-        <a href="../../controllers/productesController.php?action=list">Torna</a>
+<!--        <a href="../../controllers/productesController.php?action=list">Torna</a>-->
     </form>
 </div>
