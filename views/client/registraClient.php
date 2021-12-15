@@ -7,10 +7,10 @@
                 <label for="dni">Dni</label>
             </div>
             <div class="col-75">
-                <input type="text" id="dni" name="dni" placeholder="Dni.."><br>
+                <input type="text" id="dni" name="dni" placeholder="Dni.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorDni'])){
-                    echo "<small id='flashErrorDni' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDni'] ."</strong></small>";
+                    echo "<small id='flashErrorDni'><strong>".$_SESSION['msgErrorDni'] ."</strong></small>";
                     unset($_SESSION['msgErrorDni']);
                 }
                 ?>
@@ -21,10 +21,10 @@
                 <label for="nom">Nom</label>
             </div>
             <div class="col-75">
-                <input type="text" id="nom" name="nom" placeholder="Nom.."><br>
+                <input type="text" id="nom" name="nom" placeholder="Nom.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorNom'])){
-                    echo "<small id='flashErrorNom' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorNom'] ."</strong></small>";
+                    echo "<small id='flashErrorNom'><strong>".$_SESSION['msgErrorNom'] ."</strong></small>";
                     unset($_SESSION['msgErrorNom']);
                 }
                 ?>
@@ -35,10 +35,10 @@
                 <label for="adreca">Adreça</label>
             </div>
             <div class="col-75">
-                <input type="text" id="adreca" name="adreca" placeholder="Adreça.."><br>
+                <input type="text" id="adreca" name="adreca" placeholder="Adreça.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorAdreca'])){
-                    echo "<small id='flashErrorAdreca' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorAdreca'] ."</strong></small>";
+                    echo "<small id='flashErrorAdreca'><strong>".$_SESSION['msgErrorAdreca'] ."</strong></small>";
                     unset($_SESSION['msgErrorAdreca']);
                 }
                 ?>
@@ -49,10 +49,10 @@
                 <label for="codPostal">Codi Postal</label>
             </div>
             <div class="col-75">
-                <input type="text" id="codPostal" name="codPostal" placeholder="Codi Postal.."><br>
+                <input type="text" id="codPostal" name="codPostal" placeholder="Codi Postal.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorCodPostal'])){
-                    echo "<small id='flashErrorCodPostal' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorCodPostal'] ."</strong></small>";
+                    echo "<small id='flashErrorCodPostal'><strong>".$_SESSION['msgErrorCodPostal'] ."</strong></small>";
                     unset($_SESSION['msgErrorCodPostal']);
                 }
                 ?>
@@ -63,10 +63,10 @@
                 <label for="poble">Poble</label>
             </div>
             <div class="col-75">
-                <input type="text" id="poble" name="poble" placeholder="Poble.."><br>
+                <input type="text" id="poble" name="poble" placeholder="Poble.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorPoble'])){
-                    echo "<small id='flashErrorPoble' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorPoble'] ."</strong></small>";
+                    echo "<small id='flashErrorPoble'><strong>".$_SESSION['msgErrorPoble'] ."</strong></small>";
                     unset($_SESSION['msgErrorPoble']);
                 }
                 ?>
@@ -77,10 +77,10 @@
                 <label for="email">Email</label>
             </div>
             <div class="col-75">
-                <input type="text" id="email" name="email" placeholder="Email.."><br>
+                <input type="text" id="email" name="email" placeholder="Email.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorEmail'])){
-                    echo "<small id='flashErrorEmail' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorEmail'] ."</strong></small>";
+                    echo "<small id='flashErrorEmail'><strong>".$_SESSION['msgErrorEmail'] ."</strong></small>";
                     unset($_SESSION['msgErrorEmail']);
                 }
                 ?>
@@ -91,10 +91,10 @@
                 <label for="telefon">Telefon</label>
             </div>
             <div class="col-75">
-                <input type="text" id="telefon" name="telefon" placeholder="Telefon.."><br>
+                <input type="text" id="telefon" name="telefon" placeholder="Telefon.." class="feedback-input"><br>
                 <?php
                 if(isset($_SESSION['msgErrorTelefon'])){
-                    echo "<small id='flashErrorTelefon' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTelefon'] ."</strong></small>";
+                    echo "<small id='flashErrorTelefon'><strong>".$_SESSION['msgErrorTelefon'] ."</strong></small>";
                     unset($_SESSION['msgErrorTelefon']);
                 }
                 ?>
@@ -105,10 +105,10 @@
                 <label for="foto">Foto</label>
             </div>
             <div class="col-75">
-                <input type="file" class="form-control-file" id="foto" name="foto" value="<?php echo $_SESSION['dades']['foto'] ?? '' ?>"><br>
+                <input type="file" class="feedback-input" id="foto" name="foto" value="<?php echo $_SESSION['dades']['foto'] ?? '' ?>"><br>
                 <?php
                 if(isset($_SESSION['msgErrorFoto'])){
-                    echo "<small id='flashErrorFoto' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorFoto'] ."</strong></small>";
+                    echo "<small id='flashErrorFoto'><strong>".$_SESSION['msgErrorFoto'] ."</strong></small>";
                     unset($_SESSION['msgErrorFoto']);
                 }
                 ?>
@@ -116,7 +116,7 @@
         </div>
         <br>
         <div class="row">
-            <input type="submit" value="Registra">
+            <input type="submit" class="registra" value="Registra">
         </div>
     </form>
 </div>

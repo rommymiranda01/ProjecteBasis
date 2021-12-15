@@ -1,7 +1,3 @@
-<?php
-//session_start();
-//include_once ('../model/Client.php');
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,18 +9,24 @@
     <title>Document</title>
 </head>
 <body>
-<div class="wrapper">
-    <form class="login" method="post" action="main.php">
-        <p class="title">Log in</p>
-        <input type="text" placeholder="Username" autofocus/>
-        <i class="fa fa-user"></i>
-        <input type="password" placeholder="Password" />
-        <i class="fa fa-key"></i>
-        <a href="client/registraClient.php">Registra</a>
-        <button>
-            <i class="spinner"></i>
-            <span class="state">Log in</span>
-        </button>
+<div class="login-box">
+    <h2>Login</h2>
+    <form>
+        <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name="" required="">
+            <label>Password</label>
+        </div>
+        <a href="main.php">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Inicia la sessió
+        </a>
     </form>
 </div>
 </body>
