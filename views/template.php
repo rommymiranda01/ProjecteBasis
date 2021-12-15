@@ -21,7 +21,7 @@
         ?>
     </main>
     <footer>
-        Rommy Miranda
+        <p>Rommy Miranda</p>
     </footer>
 </body>
 </html>

@@ -25,9 +25,9 @@ foreach ($clients as $c){
                 <td><?php echo $c['email']?></td>
                 <td><?php echo $c['telefon']?></td>
         <!--        Imatge només text           -->
-                <td><?php echo $c['foto']?></td>
+<!--                <td>--><?php //echo $c['foto']?><!--</td>-->
         <!--        Imatge completa             -->
-        <!--        <td><img src="--><?//=base_url();?><!--/views/client/img/--><?php //echo $c['foto']?><!--" alt="img" class="imgTable"></td>-->
+                <td><img src="<?=base_url();?>/views/client/img/<?php echo $c['foto']?>" alt="img" class="imgTable"></td>
                 <td>
                 <form action="../../controllers/usuarisController.php?action=edit" method="post">
                     <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">

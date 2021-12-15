@@ -1,3 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f1f1f1;
+    margin: 2rem;
+}
+
+footer{
+    display: flex;
+    /*background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);*/
+    width: 100%;
+    position: marker;
+    bottom: 0;
+    left: 0;
+}
+
 /*Navbar*/
 img{
     width: 15%;
@@ -46,6 +66,13 @@ li a:hover:not(.active) {
     transition: 0.3s;
     width: 40%;
     border-radius: 5px;
+    margin-top: 10px;
+    float: left;
+    margin-left: 5%;
+}
+
+.containerCard{
+    padding: 2px 16px;
 }
 
 .card:hover {
@@ -57,6 +84,10 @@ img {
 }
 
 /*Registrar clients i productes*/
+form{
+    margin-top: 10px;
+}
+
 .container {
     padding: 2px 16px;
 }
@@ -119,34 +150,17 @@ img {
 
 /*Taula llista Clients*/
 table, th, td {
+    text-align: center;
     border: 1px solid black;
 }
 
 .imgTable{
-    width: 5%;
-    height: 5%;
+    justify-content: center;
 }
 
 table {
     width: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background: #f1f1f1;
-    margin: 2rem;
-}
-
-footer{
-    display: flex;
-    /*background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);*/
-    width: 100%;
-    position: marker;
-    bottom: 0;
-    left: 0;
+    margin-top: 10px;
 }
 
 /*Missatges d'error al moment de registrar i editar clients*/
