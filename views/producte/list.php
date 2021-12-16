@@ -1,4 +1,3 @@
-<a href="../../controllers/productesController.php?action=add">Afegir Producte</a>
 <?php
 foreach ($productes as $prod){
     ?>
