@@ -9,5 +9,4 @@ interface IClientsService
     public function  getUserById(String $idClient):Client;
     public function updateUserById(Client $c):bool;
     public function deleteUserById($idClient):bool;
-    //public function checkCreds(Client $c):?array;
 }

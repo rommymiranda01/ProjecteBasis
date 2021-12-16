@@ -152,6 +152,14 @@ table, th, td {
     border: 1px solid black;
 }
 
+th{
+    background: slategray;
+}
+
+td{
+    background: lightgray;
+}
+
 .imgTable{
     width: 35%;
     justify-content: center;

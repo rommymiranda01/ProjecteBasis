@@ -136,30 +136,4 @@ class ClientsServiceImpl implements IClientsService
         $this->closeConnection();
         return false;
     }
-
-    /*public function checkCreds(Client $c): ?array
-    {
-        // TODO: Implement checkCreds() method.
-        $this->openConnection();
-        //$user = null;
-        try{
-
-            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE username= ? and password= ?");
-            $statement->execute(
-                array($u->getUsername(), $u->getPassword())
-            );
-            $result = $statement->fetch();
-            //$user = new User($result['idUser'],$result['username'],$result['pass']);
-            if (!$result){
-                return array();
-            }else{
-                return $result;
-            }
-        }catch(PDOException $ex){
-            echo "Error: " . $ex;
-
-        }
-        $this->closeConnection();
-        return array();
-    }*/
 }
