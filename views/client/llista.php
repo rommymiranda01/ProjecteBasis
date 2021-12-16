@@ -1,7 +1,7 @@
 <?php
 foreach ($clients as $c){
 ?>
-    <table>
+    <a href="../../controllers/usuarisController.php?action=add">Afegir Client</a>    <table>
         <thead>
             <tr>
             <th>Dni</th>

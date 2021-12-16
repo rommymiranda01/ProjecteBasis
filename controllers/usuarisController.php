@@ -6,7 +6,7 @@ include ('../services/client/ClientsServiceImpl.php');
 $action = $_GET['action'];
 
 $con = new ClientsServiceImpl();
-$con->openConnection();
+//$con->openConnection();
 
 $_SESSION["errors"] = false;
 
