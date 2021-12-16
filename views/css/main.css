@@ -16,17 +16,14 @@ footer{
     position: marker;
     bottom: 0;
     left: 0;
+    font-size: 20px;
+}
+
+label{
+    font-size: 100%;
 }
 
 /*Navbar*/
-img{
-    width: 15%;
-}
-.w3-card-12 w3-margin{
-    width: 50%;
-    background-color: grey;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -156,12 +153,27 @@ table, th, td {
 }
 
 .imgTable{
+    width: 35%;
     justify-content: center;
 }
 
 table {
     width: 100%;
     margin-top: 10px;
+}
+
+.editaLlista{
+    width: 100%;
+    background: blue;
+    color: white;
+    font-size: 25px;
+}
+
+.eliminaLlista{
+    width: 100%;
+    background: red;
+    color: white;
+    font-size: 25px;
 }
 
 /*Missatges d'error al moment de registrar i editar clients*/

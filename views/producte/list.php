@@ -10,11 +10,11 @@ foreach ($productes as $prod){
             <form action="../../controllers/productesController.php?action=edit" method="post">
 <!--            <form action="/views/producte/editaProducte.php" method="post">-->
                 <input type="hidden" name="referencia" value="<?php echo $prod['referencia'] ?>">
-                <input type="submit" class="btn btn-danger" value="Edita">
+                <input type="submit" class="editaLlista" value="Edita">
             </form>
             <form action="../../controllers/productesController.php?action=elimina" method="post">
                 <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
-                <input type="submit" class="btn btn-danger" value="Elimina">
+                <input type="submit" class="eliminaLlista" value="Elimina">
             </form>
         </div>
     </div>
