@@ -1,3 +1,5 @@
+<label for="cerca">Cerca: </label>
+<input type="text" id="searchInput" placeholder="filter developer...">
 <table>
     <thead>
     <tr>
