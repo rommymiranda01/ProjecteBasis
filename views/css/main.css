@@ -268,3 +268,9 @@ table {
 #flashErrorDesc{
     color: red;
 }
+
+/* Afegir Historial */
+select{
+    width: 100%;
+    font-size: 20px;
+}

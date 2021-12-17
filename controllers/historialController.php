@@ -13,4 +13,8 @@ switch ($action){
         $view = 'historial/crea.php';
         include '../views/template.php';
         break;
+
+    case 'save':
+
+        break;
 }

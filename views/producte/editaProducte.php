@@ -8,7 +8,10 @@ if (isset($referencia)){
     $producte = $con->getProducteById($referencia);
 }
 ?>
-<a href="../../controllers/historialController.php?action=add">Afegeix Historial</a>
+<form action="../../controllers/historialController.php?action=add" method="post">
+    <input type="hidden" value="<?php echo $_POST['referencia'] ?>" name="referencia">
+    <input type="submit" class="afegeixHistorial" value="Afegir Historial">
+</form>
 <div class="container">
     <form action="../../controllers/productesController.php?action=editSave" method="post">
         <div class="row">
