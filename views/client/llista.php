@@ -1,20 +1,20 @@
+<table>
+    <thead>
+    <tr>
+        <th>Dni</th>
+        <th>Nom</th>
+        <th>Adreça</th>
+        <th>Codi postal</th>
+        <th>Poble</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Foto</th>
+        <th>Opcions</th>
+    </tr>
+    </thead>
 <?php
 foreach ($clients as $c){
 ?>
-    <table>
-        <thead>
-            <tr>
-            <th>Dni</th>
-            <th>Nom</th>
-            <th>Adreça</th>
-            <th>Codi postal</th>
-            <th>Poble</th>
-            <th>Email</th>
-            <th>Telefon</th>
-            <th>Foto</th>
-            <th>Opcions</th>
-            </tr>
-        </thead>
         <tbody id="clients">
             <tr>
                 <td><?php echo $c['dni']?></td>
@@ -37,7 +37,7 @@ foreach ($clients as $c){
                 </form>
             </tr>
         </tbody>
-    </table>
 <?php
 }
 ?>
+</table>
