@@ -2,19 +2,22 @@
 
 class Historial
 {
+    private $id;
     private $referencia;
     private $dataiHora;
     private $tipusMoviment;
     private $dni;
 
     /**
+     * @param $id
      * @param $referencia
      * @param $dataiHora
      * @param $tipusMoviment
      * @param $dni
      */
-    public function __construct($referencia, $dataiHora, $tipusMoviment, $dni)
+    public function __construct($id, $referencia, $dataiHora, $tipusMoviment, $dni)
     {
+        $this->id = $id;
         $this->referencia = $referencia;
         $this->dataiHora = $dataiHora;
         $this->tipusMoviment = $tipusMoviment;

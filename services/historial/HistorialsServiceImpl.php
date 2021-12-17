@@ -44,4 +44,48 @@ class HistorialsServiceImpl implements IHistorialsService
             return null;
         }
     }
+
+    public function getAllHistorials(): array
+    {
+        // TODO: Implement getAllHistorials() method.
+        $this->openConnection();
+        try{
+            $statement = $this->conexio->prepare("SELECT * FROM historials");
+            $statement->execute();
+            $result = $statement->fetchAll();
+
+            return $result;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return array();
+    }
+
+    public function addHistorial(Historial $h): bool
+    {
+        // TODO: Implement addHistorial() method.
+        $this->openConnection();
+        try{
+            $statement = $this->conexio->prepare("INSERT INTO historials (id, refProducte, dniClient, data , tipusMov) VALUES(null, ?,?,?,?)");
+            $res = $statement->execute(
+                array($h->getReferencia(), $h->getDni(), $h->getDataiHora(), $h->getTipusMoviment())
+            );
+            return $res;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return false;
+    }
+
+    public function updateHistorial(Historial $h): bool
+    {
+        // TODO: Implement updateHistorial() method.
+    }
+
+    public function deleteHistorial($id): bool
+    {
+        // TODO: Implement deleteHistorial() method.
+    }
 }
