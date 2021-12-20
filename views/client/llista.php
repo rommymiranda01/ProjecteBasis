@@ -12,10 +12,10 @@
         <th>Opcions</th>
     </tr>
     </thead>
-<?php
-foreach ($clients as $c){
-?>
         <tbody id="clients">
+        <?php
+        foreach ($clients as $c){
+        ?>
             <tr>
                 <td><?php echo $c['dni']?></td>
                 <td><?php echo $c['nom']?></td>
@@ -36,8 +36,8 @@ foreach ($clients as $c){
                     <input type="submit" class="eliminaLlista" value="Elimina">
                 </form>
             </tr>
+            <?php
+        }
+        ?>
         </tbody>
-<?php
-}
-?>
 </table>

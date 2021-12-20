@@ -137,7 +137,7 @@ form{
     border-radius: 5px;
     line-height: 22px;
     background-color: transparent;
-    border:2px solid #04AA6D;
+    border:2px solid red;
     transition: all 0.3s;
     padding: 13px;
     margin-bottom: 15px;
@@ -146,12 +146,12 @@ form{
     outline:0;
 }
 
-.feedback-input:focus { border:2px solid #04AA6D; }
+.feedback-input:focus { border:2px solid red; }
 
 .registra {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     width: 100%;
-    background:#04AA6D;
+    background:red;
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -163,12 +163,12 @@ form{
     margin-top:-4px;
     font-weight:700;
 }
-.registra:hover { background:#04AA6D; }
+.registra:hover { background: darkred; }
 
 .edita{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     width: 100%;
-    background:#04AA6D;
+    background:red;
     border-radius:5px;
     border:0;
     cursor:pointer;
@@ -182,7 +182,7 @@ form{
 }
 
 .edita:hover{
-    background:#04AA6D;
+    background:darkred;
 }
 
 /*Taula llista Clients*/

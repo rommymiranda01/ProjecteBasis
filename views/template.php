@@ -23,5 +23,6 @@
     <footer>
         <p>Rommy Miranda</p>
     </footer>
+    <script src="../views/js/index.js" type="text/javascript"></script>
 </body>
 </html>
