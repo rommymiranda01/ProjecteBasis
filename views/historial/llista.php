@@ -21,8 +21,9 @@
             <td>
                 <form action="../../controllers/usuarisController.php?action=edit" method="post">
                     <input type="hidden" value="<?php echo $h['dniClient'] ?>" name="dni">
-<!--                    <input type="submit" value="--><?php //echo $h['dniClient']?><!--" class="fitxaClient" name="dni">-->
-                    <?php echo $h['dniClient']?>
+                    <button type="submit" class="fitxaClient">
+                        <?php echo $h['dniClient']?>
+                    </button>
                 </form>
             </td>
             <td><?php echo $h['data']?></td>
