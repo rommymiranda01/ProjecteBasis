@@ -8,12 +8,12 @@ if (isset($referencia)){
     $producte = $con->getProducteById($referencia);
 }
 ?>
-<form action="../../controllers/historialController.php?action=add" method="post">
+<form action="<?=base_url();?>/controllers/historialController.php?action=add" method="post">
     <input type="hidden" value="<?php echo $_POST['referencia'] ?>" name="referencia">
     <input type="submit" class="afegeixHistorial" value="Afegir Historial">
 </form>
 <div class="container">
-    <form action="../../controllers/productesController.php?action=editSave" method="post">
+    <form action="<?=base_url();?>/controllers/productesController.php?action=editSave" method="post">
         <div class="row">
             <div class="col-25">
                 <label for="referencia">Referencia</label>
@@ -54,6 +54,5 @@ if (isset($referencia)){
         <div class="row">
             <input type="submit" class="edita" value="Edita">
         </div>
-<!--        <a href="../../controllers/productesController.php?action=list">Torna</a>-->
     </form>
 </div>

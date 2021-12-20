@@ -288,3 +288,12 @@ select{
 #searchInput:focus {
     border-bottom: 2px solid #4575b6;
 }
+
+.fitxaClient{
+    border: none;
+    background: none;
+}
+
+.search{
+    margin-top: 20px;
+}

@@ -26,12 +26,12 @@
                 <td><?php echo $c['telefon']?></td>
                 <td><img src="<?=base_url();?>/views/client/img/<?php echo $c['foto']?>" alt="img" class="imgTable"></td>
                 <td>
-                <form action="../../controllers/usuarisController.php?action=edit" method="post">
+                <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
                     <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
                     <input type="submit" class="editaLlista" value="Edita">
                 </form>
 
-                <form action="../../controllers/usuarisController.php?action=elimina" method="post">
+                <form action="<?=base_url();?>/controllers/usuarisController.php?action=elimina" method="post">
                     <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
                     <input type="submit" class="eliminaLlista" value="Elimina">
                 </form>
