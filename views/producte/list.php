@@ -8,7 +8,6 @@ foreach ($productes as $prod){
             <p class="card-text">Titol: <?php echo $prod['titol'] ?></p>
             <p class="card-text">Descripcio: <?php echo $prod['descripcio'] ?></p>
             <form action="../../controllers/productesController.php?action=edit" method="post">
-<!--            <form action="/views/producte/editaProducte.php" method="post">-->
                 <input type="hidden" name="referencia" value="<?php echo $prod['referencia'] ?>">
                 <input type="submit" class="editaLlista" value="Edita">
             </form>

@@ -1,7 +1,7 @@
 <div class="app">
     <div class="search">
 <label for="cerca">Cerca: </label>
-    <input type="text" id="searchInput" placeholder="filter developer...">
+    <input type="text" id="searchInput" placeholder="escriu...">
     </div>
 <table>
     <thead>
@@ -19,7 +19,7 @@
         <tr>
             <td><?php echo $h['refProducte']?></td>
             <td>
-                <form action="../../controllers/usuarisController.php?action=edit" method="post">
+                <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
                     <input type="hidden" value="<?php echo $h['dniClient'] ?>" name="dni">
                     <button type="submit" class="fitxaClient">
                         <?php echo $h['dniClient']?>

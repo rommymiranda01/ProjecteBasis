@@ -8,6 +8,9 @@ if (isset($dni)){
     $client = $con->getUserById($dni);
 }
 ?>
+<form action="<?=base_url();?>/controllers/historialController.php?action=add" method="post">
+    <input type="submit" class="afegeixHistorial" value="Afegir Historial">
+</form>
 <div class="container">
     <form action="../../controllers/usuarisController.php?action=editSave" enctype="multipart/form-data" method="post">
         <div class="row">

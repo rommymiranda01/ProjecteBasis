@@ -1,43 +1,29 @@
-<table>
-    <thead>
-    <tr>
-        <th>Dni</th>
-        <th>Nom</th>
-        <th>Adreça</th>
-        <th>Codi postal</th>
-        <th>Poble</th>
-        <th>Email</th>
-        <th>Telefon</th>
-        <th>Foto</th>
-        <th>Opcions</th>
-    </tr>
-    </thead>
-        <tbody id="clients">
-        <?php
-        foreach ($clients as $c){
-        ?>
-            <tr>
-                <td><?php echo $c['dni']?></td>
-                <td><?php echo $c['nom']?></td>
-                <td><?php echo $c['adreca']?></td>
-                <td><?php echo $c['codPostal']?></td>
-                <td><?php echo $c['poble']?></td>
-                <td><?php echo $c['email']?></td>
-                <td><?php echo $c['telefon']?></td>
-                <td><img src="<?=base_url();?>/views/client/img/<?php echo $c['foto']?>" alt="img" class="imgTable"></td>
-                <td>
-                <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
-                    <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
-                    <input type="submit" class="editaLlista" value="Edita">
-                </form>
+<?php
+foreach ($clients  as $c){
+    ?>
+    <div class="card">
+        <img src="<?=base_url();?>/views/client/img/<?php echo $c['foto']?>" alt="img" style="width:100%">
+        <div class="containerCard">
+            <p class="card-title">Dni: <?php echo $c['dni'] ?></p>
+            <p class="card-text">Nom: <?php echo $c['nom'] ?></p>
+            <p class="card-text">Adreça: <?php echo $c['adreca'] ?></p>
+            <p class="card-text">Codi Postal: <?php echo $c['codPostal'] ?></p>
+            <p class="card-text">Poble: <?php echo $c['poble'] ?></p>
+            <p class="card-text">Email: <?php echo $c['email'] ?></p>
+            <p class="card-text">Telefon: <?php echo $c['telefon'] ?></p>
 
-                <form action="<?=base_url();?>/controllers/usuarisController.php?action=elimina" method="post">
-                    <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
-                    <input type="submit" class="eliminaLlista" value="Elimina">
-                </form>
-            </tr>
-            <?php
-        }
-        ?>
-        </tbody>
-</table>
+            <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
+                <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
+                <input type="submit" class="editaLlista" value="Edita">
+            </form>
+
+            <form action="<?=base_url();?>/controllers/usuarisController.php?action=elimina" method="post">
+                <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
+                <input type="submit" class="eliminaLlista" value="Elimina">
+            </form>
+
+        </div>
+    </div>
+    <?php
+}
+?>
