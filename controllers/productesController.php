@@ -6,7 +6,7 @@ include ('../services/producte/ProductesServiceImpl.php');
 $action = $_GET['action'];
 
 $con = new ProductesServiceImpl();
-$con->openConnection();
+//$con->openConnection();
 
 $_SESSION["errors"] = false;
 

@@ -269,6 +269,10 @@ table {
     color: red;
 }
 
+#flashErrorMov{
+    color: red;
+}
+
 /* Afegir Historial */
 select{
     width: 100%;
@@ -283,8 +287,6 @@ select{
     margin-bottom: 20px;
 }
 
-/* When input gains focus, add a blue border below it */
-
 #searchInput:focus {
     border-bottom: 2px solid #4575b6;
 }
@@ -296,4 +298,18 @@ select{
 
 .search{
     margin-top: 20px;
+}
+
+/* Edita Producte */
+.afegeixHistorial{
+    background: green;
+    color: white;
+    font-size: 25px;
+}
+
+/* Edita Client */
+.llistatHistorial{
+    background: steelblue;
+    color: white;
+    font-size: 25px;
 }

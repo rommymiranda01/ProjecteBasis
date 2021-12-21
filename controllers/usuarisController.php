@@ -164,4 +164,11 @@ switch ($action) {
             header('Location: ../controllers/usuarisController.php?action=list');
         }
         break;
+
+    case 'listHistorial':
+        $dni = $_POST['dni'] ?? null;
+        $historial = $con->getHistorialById($dni);
+        $view = 'client/historialClient.php';
+        include '../views/template.php';
+        break;
 }

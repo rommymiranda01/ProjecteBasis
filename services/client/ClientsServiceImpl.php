@@ -136,4 +136,21 @@ class ClientsServiceImpl implements IClientsService
         $this->closeConnection();
         return false;
     }
+
+    public function getHistorialById($dni): array
+    {
+        // TODO: Implement getHistorialById() method.
+        $this->openConnection();
+        try{
+            $statement = $this->conexio->prepare("SELECT * FROM historials LEFT JOIN productes ON historials.refProducte = productes.referencia WHERE historials.dniClient=?");
+            $statement->execute(array($dni));
+            $result = $statement->fetchAll();
+
+            return $result;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return array();
+    }
 }
