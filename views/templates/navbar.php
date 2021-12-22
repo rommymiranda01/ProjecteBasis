@@ -19,7 +19,7 @@
         </div>
     </li>
 
-    <li><a href="../../controllers/historialController.php?action=list">Historial</a></li>
+    <li><a href="../../controllers/historialController.php?action=list">Llistat historials</a></li>
     <li><a href="../../controllers/usuarisController.php?action=logout">Logout</a></li>
 
 </ul>
