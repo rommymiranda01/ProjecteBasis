@@ -137,4 +137,24 @@ class ProductesServiceImpl implements IProductesService
         $this->closeConnection();
         return false;
     }
+
+    public function rankLlogats($referencia): bool
+    {
+        // TODO: Implement rankLlogats() method.
+        $this->openConnection();
+        try{
+            $querySql = "SELECT * FROM productes WHERE referencia=?";
+            $statement = $this->conexio->prepare($querySql);
+            $res = $statement->execute(array(
+                $referencia
+            ));
+
+            return $res;
+
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return false;
+    }
 }

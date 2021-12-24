@@ -122,4 +122,9 @@ switch ($action){
         $view = 'producte/list.php';
         include '../views/template.php';
         break;
+
+    case 'rank':
+        $view = 'producte/rank.php';
+        include '../views/template.php';
+        break;
 }

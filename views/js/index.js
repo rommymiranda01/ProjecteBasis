@@ -12,7 +12,6 @@ function filter() {
 
         tds.forEach(function (td) {
             console.log(td.textContent.toUpperCase().includes(value));
-
             console.log(td.textContent);
         })
     });
