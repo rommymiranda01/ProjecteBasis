@@ -143,7 +143,7 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement rankLlogats() method.
         $this->openConnection();
         try{
-            $querySql = "SELECT * FROM productes WHERE referencia=?";
+            $querySql = "SELECT referencia, titol FROM productes WHERE referencia=? ORDER BY referencia DESC";
             $statement = $this->conexio->prepare($querySql);
             $res = $statement->execute(array(
                 $referencia
