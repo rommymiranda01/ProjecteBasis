@@ -124,6 +124,8 @@ switch ($action){
         break;
 
     case 'rank':
+        $referencia = $_POST['referencia'] ?? null;
+        $rankProductes = $con->rankLlogats($referencia);
         $view = 'producte/rank.php';
         include '../views/template.php';
         break;

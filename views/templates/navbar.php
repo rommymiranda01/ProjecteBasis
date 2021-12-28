@@ -20,7 +20,16 @@
     </li>
 
     <li><a href="../../controllers/historialController.php?action=list">Llistat historials</a></li>
-    <li><a href="../../controllers/productesController.php?action=rank">Rank Productes</a></li>
+
+    <!-- Rank -->
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Rank</a>
+        <div class="dropdown-content">
+            <a href="../../controllers/productesController.php?action=rank">Rank Productes</a>
+            <a href="../../controllers/usuarisController.php?action=rank">Rank Clients</a>
+        </div>
+    </li>
+
     <li><a href="../../controllers/usuarisController.php?action=logout">Logout</a></li>
 
 </ul>

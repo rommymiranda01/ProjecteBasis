@@ -9,5 +9,5 @@ interface IProductesService
     public function getProducteById(String $referencia):Producte;
     public function updateProducte(Producte $p):bool;
     public function deleteProducteById($referencia):bool;
-    public function rankLlogats($referencia):bool;
+    public function rankLlogats($referencia):array;
 }

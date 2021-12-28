@@ -153,4 +153,25 @@ class ClientsServiceImpl implements IClientsService
         $this->closeConnection();
         return array();
     }
+
+    public function rankClientActiu($dni): array
+    {
+        // TODO: Implement rankClientActiu() method.
+        $this->openConnection();
+        try{
+            //$querySql = "SELECT dni, nom FROM clients WHERE dni=? ORDER BY dni DESC";
+            $querySql = "SELECT dni, nom FROM clients ORDER BY dni DESC";
+            $statement = $this->conexio->prepare($querySql);
+            $res = $statement->execute(array(
+                $dni
+            ));
+
+            return $res;
+
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return array();
+    }
 }

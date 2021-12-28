@@ -171,4 +171,11 @@ switch ($action) {
         $view = 'client/historialClient.php';
         include '../views/template.php';
         break;
+
+    case 'rank':
+        $dni = $_POST['dni'] ?? null;
+        $rankClients = $con->rankClientActiu($dni);
+        $view = 'client/rank.php';
+        include '../views/template.php';
+        break;
 }
