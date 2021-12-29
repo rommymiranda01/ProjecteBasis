@@ -173,8 +173,7 @@ switch ($action) {
         break;
 
     case 'rank':
-        $dni = $_POST['dni'] ?? null;
-        $rankClients = $con->rankClientActiu($dni);
+        $rankClients = $con->rankClientActiu();
         $view = 'client/rank.php';
         include '../views/template.php';
         break;

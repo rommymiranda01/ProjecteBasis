@@ -154,7 +154,7 @@ class ClientsServiceImpl implements IClientsService
         return array();
     }
 
-    public function rankClientActiu($dni): array
+    public function rankClientActiu(): array
     {
         // TODO: Implement rankClientActiu() method.
         $this->openConnection();
@@ -162,9 +162,8 @@ class ClientsServiceImpl implements IClientsService
             //$querySql = "SELECT dni, nom FROM clients WHERE dni=? ORDER BY dni DESC";
             $querySql = "SELECT dni, nom FROM clients ORDER BY dni DESC";
             $statement = $this->conexio->prepare($querySql);
-            $res = $statement->execute(array(
-                $dni
-            ));
+            $statement->execute();
+            $res = $statement->fetchAll();
 
             return $res;
 

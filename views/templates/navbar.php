@@ -27,6 +27,7 @@
         <div class="dropdown-content">
             <a href="../../controllers/productesController.php?action=rank">Rank Productes</a>
             <a href="../../controllers/usuarisController.php?action=rank">Rank Clients</a>
+            <a href="../../controllers/productesController.php?action=llistaEnd">Llista endarreriments</a>
         </div>
     </li>
 

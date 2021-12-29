@@ -118,14 +118,13 @@ switch ($action){
     case 'list':
         //logica...
         $productes = $con->getAllProductes();
-        $success = "tot ha anat bé!!!";
+        //$success = "tot ha anat bé!!!";
         $view = 'producte/list.php';
         include '../views/template.php';
         break;
 
     case 'rank':
-        $referencia = $_POST['referencia'] ?? null;
-        $rankProductes = $con->rankLlogats($referencia);
+        $rankProductes = $con->rankLlogats();
         $view = 'producte/rank.php';
         include '../views/template.php';
         break;

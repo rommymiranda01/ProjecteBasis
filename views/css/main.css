@@ -291,6 +291,10 @@ select{
     border-bottom: 2px solid #4575b6;
 }
 
+.hidden{
+    display:none;
+}
+
 .fitxaClient{
     border: none;
     background: none;
