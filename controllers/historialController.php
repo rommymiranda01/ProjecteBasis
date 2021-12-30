@@ -43,4 +43,25 @@ switch ($action){
         $view = 'historial/llista.php';
         include '../views/template.php';
         break;
+
+    case 'retornar':
+        $view = 'historial/retornar.php';
+        include '../views/template.php';
+        break;
+
+    case 'saveRetornar':
+        $Object = new DateTime();
+        $DateAndTime = $Object->format("Y-m-d h:i:s");
+
+        $referencia = $_POST['referencia'] ?? null;
+        $historial = $con->getHistorialById($referencia);
+
+        $historial->setTipusMoviment($_POST['tipusMoviment']);
+        $historial->setDni($_POST['dni']);
+
+        if (isset($historial)) {
+        $con->updateHistorial($historial);
+        header('Location: ../controllers/historialController.php?action=list');
+        }
+        break;
 }

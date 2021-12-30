@@ -223,6 +223,13 @@ table {
     font-size: 25px;
 }
 
+.retorna{
+    width: 100%;
+    background: deepskyblue ;
+    color: white;
+    font-size: 25px;
+}
+
 /*Missatges d'error al moment de registrar i editar clients*/
 #flashErrorDni{
     color: red;

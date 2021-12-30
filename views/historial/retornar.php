@@ -1,9 +1,9 @@
 <?php
 ?>
 <div class="container">
-    <form action="../../controllers/historialController.php?action=save" enctype="multipart/form-data" method="post">
+    <form action="../../controllers/historialController.php?action=saveRetornar" enctype="multipart/form-data" method="post">
         <div class="row">
-                <input type="hidden" name="referencia" value="<?php echo $_POST['referencia'] ?>">
+            <input type="hidden" name="referencia" value="<?php echo $_POST['referencia'] ?>">
         </div>
         <div class="row">
             <div class="col-25">
@@ -11,8 +11,8 @@
             </div>
             <select name="tipusMoviment" id="tipusMoviment">
                 <option disabled selected value> --Selecciona-- </option>
-                <option value="L">Lloguer</option>
-<!--                <option value="D">Devolució</option>-->
+<!--                <option value="L">Lloguer</option>-->
+                <option value="D">Devolució</option>
             </select>
             <?php
             if(isset($_SESSION['msgErrorMov'])){
@@ -37,7 +37,7 @@
         </div>
         <br>
         <div class="row">
-            <input type="submit" class="registra" value="Registra">
+            <input type="submit" class="registra" value="Retorna">
         </div>
     </form>
 </div>

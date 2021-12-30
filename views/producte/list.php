@@ -15,6 +15,10 @@ foreach ($productes as $prod){
                 <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
                 <input type="submit" class="eliminaLlista" value="Elimina">
             </form>
+            <form action="<?=base_url();?>/controllers/historialController.php?action=retornar" method="post">
+                <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
+                <input type="submit" class="retorna" value="Retorna">
+            </form>
         </div>
     </div>
     <?php

@@ -8,4 +8,5 @@ interface IHistorialsService
     public function addHistorial(Historial $h) : bool;
     public function updateHistorial(Historial $h) : bool;
     public function deleteHistorial($id):bool;
+    public function getHistorialById(String $referencia):Historial;
 }

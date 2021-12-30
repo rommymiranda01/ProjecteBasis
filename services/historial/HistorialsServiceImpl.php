@@ -82,10 +82,43 @@ class HistorialsServiceImpl implements IHistorialsService
     public function updateHistorial(Historial $h): bool
     {
         // TODO: Implement updateHistorial() method.
+        $this->openConnection();
+        try{
+            $statement = $this->conexio->prepare("UPDATE historials SET tipusMov=?, dniClient=? WHERE refProducte=?");
+            $res = $statement->execute(
+                array($h->getReferencia(), $h->getDni(), $h->getTipusMoviment())
+            );
+            return $res;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return false;
     }
 
     public function deleteHistorial($id): bool
     {
         // TODO: Implement deleteHistorial() method.
+    }
+
+    public function getHistorialById(string $referencia): Historial
+    {
+        // TODO: Implement getHistorialById() method.
+        $this->openConnection();
+        $historial = null;
+        try{
+
+            $statement = $this->conexio->prepare("SELECT * FROM historials WHERE refProducte= ?");
+            $statement->execute(
+                array($referencia)
+            );
+            $result = $statement->fetch();
+            $historial = new Historial($result['id'], $result['refProducte'], $result['data'], $result['tipusMov'], $result['dniClient']);
+            return $historial;
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return $historial;
     }
 }
