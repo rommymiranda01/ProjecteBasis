@@ -6,7 +6,6 @@ include ('../services/historial/HistorialsServiceImpl.php');
 $action = $_GET['action'];
 
 $con = new HistorialsServiceImpl();
-//$con->openConnection();
 
 $_SESSION["errors"] = false;
 
@@ -50,14 +49,16 @@ switch ($action){
         break;
 
     case 'saveRetornar':
-        $Object = new DateTime();
-        $DateAndTime = $Object->format("Y-m-d h:i:s");
+//        $Object = new DateTime();
+//        $DateAndTime = $Object->format("Y-m-d h:i:s");
 
         $referencia = $_POST['referencia'] ?? null;
+        //die(var_dump($referencia));
         $historial = $con->getHistorialById($referencia);
 
         $historial->setTipusMoviment($_POST['tipusMoviment']);
         $historial->setDni($_POST['dni']);
+        //die(var_dump($historial));
 
         if (isset($historial)) {
         $con->updateHistorial($historial);

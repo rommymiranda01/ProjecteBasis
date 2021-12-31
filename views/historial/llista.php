@@ -17,8 +17,16 @@
         foreach ($historials as $h){
         ?>
         <tr>
-            <td><?php echo $h['refProducte']?></td>
-            <td><?php echo $h['dniClient']?></td>
+            <td>
+                <?php echo $h['refProducte']?>
+<!--                <input type="hidden" name="titol" value="--><?php //echo $_POST['titol'] ?><!--">-->
+            </td>
+
+            <td>
+                <?php echo $h['dniClient']?>
+<!--                <input type="hidden" value="--><?php //echo $h['dniClient'] ?><!--" name="dni">-->
+            </td>
+
             <td><?php echo $h['data']?></td>
             <td><?php echo $h['tipusMov']?></td>
         </tr>

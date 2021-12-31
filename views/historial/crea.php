@@ -12,7 +12,7 @@
             <select name="tipusMoviment" id="tipusMoviment">
                 <option disabled selected value> --Selecciona-- </option>
                 <option value="L">Lloguer</option>
-<!--                <option value="D">Devolució</option>-->
+                <option disabled value="D">Devolució</option>
             </select>
             <?php
             if(isset($_SESSION['msgErrorMov'])){

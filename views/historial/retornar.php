@@ -11,7 +11,7 @@
             </div>
             <select name="tipusMoviment" id="tipusMoviment">
                 <option disabled selected value> --Selecciona-- </option>
-<!--                <option value="L">Lloguer</option>-->
+                <option disabled value="L">Lloguer</option>
                 <option value="D">Devolució</option>
             </select>
             <?php

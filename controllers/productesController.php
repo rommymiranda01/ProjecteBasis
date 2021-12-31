@@ -6,7 +6,6 @@ include ('../services/producte/ProductesServiceImpl.php');
 $action = $_GET['action'];
 
 $con = new ProductesServiceImpl();
-//$con->openConnection();
 
 $_SESSION["errors"] = false;
 
@@ -72,7 +71,6 @@ switch ($action){
         }
         break;
     case 'edit':
-
         $view = 'producte/editaProducte.php';
         include '../views/template.php';
         break;
@@ -81,9 +79,11 @@ switch ($action){
 
         $referencia = $_POST['referencia'] ?? null;
         //die(var_dump($referencia));
+
         $producte = $con->getProducteById($referencia);
         $producte->setTitol($_POST['titol']);
         $producte->setDescripcio($_POST['descripcio']);
+
         //die(var_dump($producte));
 
         if (!isset($_POST['titol']) || empty($_POST["titol"])){
@@ -118,7 +118,6 @@ switch ($action){
     case 'list':
         //logica...
         $productes = $con->getAllProductes();
-        //$success = "tot ha anat bé!!!";
         $view = 'producte/list.php';
         include '../views/template.php';
         break;

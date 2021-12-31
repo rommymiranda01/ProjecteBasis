@@ -101,7 +101,7 @@ class HistorialsServiceImpl implements IHistorialsService
         // TODO: Implement deleteHistorial() method.
     }
 
-    public function getHistorialById(string $referencia): Historial
+    public function getHistorialById($referencia): Historial
     {
         // TODO: Implement getHistorialById() method.
         $this->openConnection();
