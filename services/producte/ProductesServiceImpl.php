@@ -86,7 +86,6 @@ class ProductesServiceImpl implements IProductesService
         $this->openConnection();
         $producte = null;
         try{
-
             $statement = $this->conexio->prepare("SELECT * FROM productes WHERE referencia= ?");
             $statement->execute(
                 array($referencia)

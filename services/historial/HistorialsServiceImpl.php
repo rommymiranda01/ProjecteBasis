@@ -84,9 +84,10 @@ class HistorialsServiceImpl implements IHistorialsService
         // TODO: Implement updateHistorial() method.
         $this->openConnection();
         try{
-            $statement = $this->conexio->prepare("UPDATE historials SET tipusMov=?, dniClient=? WHERE refProducte=?");
+            $querySql = "UPDATE historials SET tipusMov=?, dniClient=? WHERE refProducte=?";
+            $statement = $this->conexio->prepare($querySql);
             $res = $statement->execute(
-                array($h->getReferencia(), $h->getDni(), $h->getTipusMoviment())
+                array($h->getReferencia(), $h->getTipusMoviment(), $h->getDni())
             );
             return $res;
         }catch(PDOException $ex){
@@ -113,7 +114,7 @@ class HistorialsServiceImpl implements IHistorialsService
                 array($referencia)
             );
             $result = $statement->fetch();
-            $historial = new Historial($result['id'], $result['refProducte'], $result['data'], $result['tipusMov'], $result['dniClient']);
+            $historial = new Historial($result['id'], $result['refProducte'],  $result['dniClient'], $result['data'], $result['tipusMov']);
             return $historial;
         }catch(PDOException $ex){
             echo "Error: " . $ex;

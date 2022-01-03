@@ -58,7 +58,7 @@ switch ($action){
 
         $historial->setTipusMoviment($_POST['tipusMoviment']);
         $historial->setDni($_POST['dni']);
-        //die(var_dump($historial));
+        //  die(var_dump($historial));
 
         if (isset($historial)) {
         $con->updateHistorial($historial);
