@@ -49,8 +49,8 @@ switch ($action){
         break;
 
     case 'saveRetornar':
-//        $Object = new DateTime();
-//        $DateAndTime = $Object->format("Y-m-d h:i:s");
+        $Object = new DateTime();
+        $DateAndTime = $Object->format("Y-m-d h:i:s");
 
         $referencia = $_POST['referencia'] ?? null;
         //die(var_dump($referencia));
@@ -58,11 +58,21 @@ switch ($action){
 
         $historial->setTipusMoviment($_POST['tipusMoviment']);
         $historial->setDni($_POST['dni']);
+        $historial->setDataiHora($DateAndTime);
         //  die(var_dump($historial));
 
         if (isset($historial)) {
         $con->updateHistorial($historial);
         header('Location: ../controllers/historialController.php?action=list');
+        }
+        break;
+
+    case 'elimina':
+        $referencia = $_POST['referencia'] ?? null;
+
+        if (isset($referencia)){
+            $con->deleteHistorial($referencia);
+            header('Location: ../controllers/historialController.php?action=list');
         }
         break;
 }

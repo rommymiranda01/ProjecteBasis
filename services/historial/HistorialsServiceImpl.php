@@ -84,10 +84,10 @@ class HistorialsServiceImpl implements IHistorialsService
         // TODO: Implement updateHistorial() method.
         $this->openConnection();
         try{
-            $querySql = "UPDATE historials SET tipusMov=?, dniClient=? WHERE refProducte=?";
+            $querySql = "UPDATE historials SET tipusMov=?, dniClient=?, data=? WHERE refProducte=?";
             $statement = $this->conexio->prepare($querySql);
             $res = $statement->execute(
-                array($h->getReferencia(), $h->getTipusMoviment(), $h->getDni())
+                array($h->getTipusMoviment(), $h->getDni(), $h->getDataiHora(), $h->getReferencia())
             );
             return $res;
         }catch(PDOException $ex){
@@ -97,9 +97,24 @@ class HistorialsServiceImpl implements IHistorialsService
         return false;
     }
 
-    public function deleteHistorial($id): bool
+    public function deleteHistorial($referencia): bool
     {
         // TODO: Implement deleteHistorial() method.
+        $this->openConnection();
+        try{
+            $querySql = "DELETE FROM historials WHERE refProducte=?";
+            $statement = $this->conexio->prepare($querySql);
+            $res = $statement->execute(array(
+                $referencia
+            ));
+
+            return $res;
+
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return false;
     }
 
     public function getHistorialById($referencia): Historial
@@ -114,7 +129,7 @@ class HistorialsServiceImpl implements IHistorialsService
                 array($referencia)
             );
             $result = $statement->fetch();
-            $historial = new Historial($result['id'], $result['refProducte'],  $result['dniClient'], $result['data'], $result['tipusMov']);
+            $historial = new Historial($result['id'], $result['refProducte'], $result['data'], $result['tipusMov'], $result['dniClient']);
             return $historial;
         }catch(PDOException $ex){
             echo "Error: " . $ex;
