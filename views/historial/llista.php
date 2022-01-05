@@ -19,10 +19,12 @@
         ?>
         <tr>
             <td>
+<!--                <input type="hidden" name="titol" value="--><?php //$con->getProducteById($h['refProducte'])->getTitol() ?><!--">-->
                 <?php echo $h['refProducte']?>
             </td>
 
             <td>
+<!--                <input type="hidden" name="nom" value="--><?php //$con->getUserById($h['dniClient'])->getNom() ?><!--">-->
                 <?php echo $h['dniClient']?>
             </td>
 

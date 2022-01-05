@@ -10,4 +10,5 @@ interface IProductesService
     public function updateProducte(Producte $p):bool;
     public function deleteProducteById($referencia):bool;
     public function rankLlogats():array;
+    public function numProductesLlogats():array;
 }

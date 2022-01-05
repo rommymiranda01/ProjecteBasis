@@ -124,7 +124,13 @@ switch ($action){
 
     case 'rank':
         $rankProductes = $con->rankLlogats();
+        $rankP = $con->numProductesLlogats();
         $view = 'producte/rank.php';
+        include '../views/template.php';
+        break;
+
+    case 'llistaEnd':
+        $view = 'producte/llistaEnd.php';
         include '../views/template.php';
         break;
 }
