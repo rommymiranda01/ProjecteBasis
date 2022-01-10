@@ -18,7 +18,33 @@
     include 'templates/navbar.php';
     ?>
 </nav>
-<h1>En construcció</h1>
+
+<!--Slider-->
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 2</div>
+        <img src="img/Bandera-Suiza.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 2</div>
+        <img src="img/logo.png" style="width:100%">
+    </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<!--Fi Slider-->
+
+<script src="js/main.js"></script>
+
 </body>
 <footer>
     <p>Rommy Miranda</p>
