@@ -161,7 +161,7 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement numProductesLlogats() method.
         $this->openConnection();
         try {
-            $statement = $this->conexio->prepare("SELECT COUNT(*) FROM productes");
+            $statement = $this->conexio->prepare("SELECT refProducte, COUNT(refProducte) as productes_llogats FROM historials GROUP BY 1");
             $statement->execute();
             $result = $statement->fetchAll();
 
