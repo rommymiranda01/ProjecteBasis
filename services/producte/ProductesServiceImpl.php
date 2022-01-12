@@ -142,7 +142,9 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement rankLlogats() method.
         $this->openConnection();
         try{
-            $querySql = "SELECT titol, referencia FROM productes ORDER BY referencia DESC";
+            $querySql = "SELECT referencia,titol, COUNT(referencia) as productes_llogats FROM productes
+            LEFT JOIN historials on historials.refProducte=productes.referencia
+            GROUP BY 1 ORDER BY productes_llogats DESC;";
             $statement = $this->conexio->prepare($querySql);
             $statement->execute();
             $res = $statement->fetchAll();
@@ -150,23 +152,6 @@ class ProductesServiceImpl implements IProductesService
             return $res;
 
         }catch(PDOException $ex){
-            echo "Error: " . $ex;
-        }
-        $this->closeConnection();
-        return array();
-    }
-
-    public function numProductesLlogats(): array
-    {
-        // TODO: Implement numProductesLlogats() method.
-        $this->openConnection();
-        try {
-            $statement = $this->conexio->prepare("SELECT refProducte, COUNT(refProducte) as productes_llogats FROM historials GROUP BY 1");
-            $statement->execute();
-            $result = $statement->fetchAll();
-
-            return $result;
-        }catch (PDOException $ex){
             echo "Error: " . $ex;
         }
         $this->closeConnection();

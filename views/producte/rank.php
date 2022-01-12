@@ -16,7 +16,7 @@ $ranking=1;
         <td><?php echo $r['titol']?></td>
 
         <!-- Crear una consulta per veure el número de vegades que s'ha llogat el producte -->
-        <td><?php $con->numProductesLlogats()?></td>
+        <td><?php echo $r['productes_llogats'] ?></td>
     </tr>
     <?php
         $ranking++;

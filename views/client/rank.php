@@ -5,6 +5,7 @@ $ranking = 1;
 <table>
     <tr>
         <td><strong>Rank</strong></td>
+        <td><strong>Dni</strong></td>
         <td><strong>Usuari més actiu</strong></td>
     </tr>
     <?php
@@ -12,7 +13,7 @@ $ranking = 1;
     ?>
     <tr>
         <td><?php echo $ranking ?></td>
-<!--        <td>--><?php //echo $r['dni']?><!--</td>-->
+        <td><?php echo $r['dni']?></td>
         <td><?php echo $r['nom']?></td>
     </tr>
         <?php
