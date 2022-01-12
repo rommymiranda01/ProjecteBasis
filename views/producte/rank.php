@@ -1,7 +1,7 @@
 <?php
 $ranking=1;
 ?>
-<h2>Rank</h2>
+<h2>Rank Productes</h2>
 <table>
     <tr>
         <td><strong>Rank</strong></td>
@@ -13,8 +13,7 @@ $ranking=1;
     ?>
     <tr>
         <td><?php echo $ranking ?></td>
-        <td><?php echo $r['titol']?></td>
-
+        <td><?php echo $r['titol']." ".$r['descripcio']?></td>
         <!-- Crear una consulta per veure el número de vegades que s'ha llogat el producte -->
         <td><?php echo $r['productes_llogats'] ?></td>
     </tr>

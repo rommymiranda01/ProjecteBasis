@@ -1,7 +1,7 @@
 <?php
 $ranking = 1;
 ?>
-<h2>Rank</h2>
+<h2>Rank Clients</h2>
 <table>
     <tr>
         <td><strong>Rank</strong></td>

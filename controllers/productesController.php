@@ -129,6 +129,7 @@ switch ($action){
         break;
 
     case 'llistaEnd':
+        $llistaEnd = $con->llistaEndarreriments();
         $view = 'producte/llistaEnd.php';
         include '../views/template.php';
         break;

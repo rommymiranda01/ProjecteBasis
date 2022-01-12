@@ -161,7 +161,7 @@ class ClientsServiceImpl implements IClientsService
         try{
             //$querySql = "SELECT dni, nom FROM clients WHERE dni=? ORDER BY dni DESC";
             //$querySql = "SELECT dni, nom FROM clients ORDER BY dni DESC";
-            $querySql = "SELECT DISTINCT dni, nom FROM clients LEFT JOIN historials on historials.dniClient=clients.dni";
+            $querySql = "SELECT DISTINCT dni, nom FROM clients LEFT JOIN historials on historials.dniClient=clients.dni ORDER BY dni DESC";
             $statement = $this->conexio->prepare($querySql);
             $statement->execute();
             $res = $statement->fetchAll();

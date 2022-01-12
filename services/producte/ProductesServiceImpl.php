@@ -4,7 +4,6 @@ require_once ("IProductesService.php");
 
 class ProductesServiceImpl implements IProductesService
 {
-
     private $host;
     private $db;
     private $dsn;
@@ -142,9 +141,28 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement rankLlogats() method.
         $this->openConnection();
         try{
-            $querySql = "SELECT referencia,titol, COUNT(referencia) as productes_llogats FROM productes
+            $querySql = "SELECT referencia,titol, descripcio, COUNT(referencia) as productes_llogats FROM productes
             LEFT JOIN historials on historials.refProducte=productes.referencia
             GROUP BY 1 ORDER BY productes_llogats DESC;";
+            $statement = $this->conexio->prepare($querySql);
+            $statement->execute();
+            $res = $statement->fetchAll();
+
+            return $res;
+
+        }catch(PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return array();
+    }
+
+    public function llistaEndarreriments(): array
+    {
+        // TODO: Implement llistaEndarreriments() method.
+        $this->openConnection();
+        try{
+            $querySql = "SELECT refProducte, dniClient, data FROM historials WHERE tipusMov='L'";
             $statement = $this->conexio->prepare($querySql);
             $statement->execute();
             $res = $statement->fetchAll();
