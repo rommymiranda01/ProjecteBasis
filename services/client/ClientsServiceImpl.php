@@ -174,4 +174,26 @@ class ClientsServiceImpl implements IClientsService
         $this->closeConnection();
         return array();
     }
+
+    public function checkCred(Client $c): ?array
+    {
+        // TODO: Implement checkCred() method.
+        $this->openConnection();
+        try {
+            $statement = $this->conexio->prepare("SELECT * FROM user WHERE username=? and password=?");
+            $statement->execute(
+                array($c->getNom(), $c->getPassword())
+            );
+            $result = $statement->fetch();
+            if (!$result){
+                return array();
+            }else{
+                return $result;
+            }
+        }catch (PDOException $ex){
+            echo "Error: " . $ex;
+        }
+        $this->closeConnection();
+        return array();
+    }
 }

@@ -28,6 +28,7 @@ switch ($action) {
         break;
 
     case 'add':
+        //posible registra.php
         $view = 'client/registraClient.php';
         include '../views/template.php';
         break;
@@ -176,5 +177,9 @@ switch ($action) {
         $rankClients = $con->rankClientActiu();
         $view = 'client/rank.php';
         include '../views/template.php';
+        break;
+
+    case 'checkLogin':
+
         break;
 }

@@ -11,4 +11,5 @@ interface IClientsService
     public function deleteUserById($idClient):bool;
     public function getHistorialById($dni):array;
     public function rankClientActiu():array;
+    public function checkCred(Client $c) : ?array;
 }
