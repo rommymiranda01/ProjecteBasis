@@ -14,7 +14,7 @@
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Clients</a>
         <div class="dropdown-content">
-            <a href="../../controllers/usuarisController.php?action=add">Afegir Clients</a>
+<!--            <a href="../../controllers/usuarisController.php?action=add">Afegir Clients</a>-->
             <a href="../../controllers/usuarisController.php?action=list">Llista Clients</a>
         </div>
     </li>

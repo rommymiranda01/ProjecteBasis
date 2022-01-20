@@ -14,22 +14,24 @@
     <form id="login-form" class="form" action="../controllers/usuarisController.php?action=checkLogin" method="post">
         <div class="user-box">
             <input type="text" name="" required="">
-            <label>Username</label>
+            <label>Nom</label>
         </div>
         <div class="user-box">
             <input type="password" name="" required="">
             <label>Password</label>
         </div>
-        <a href="main.php">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Inicia la sessió
-        </a>
-        <a href="registra.php">
-            Registra
-        </a>
+<!--        <a href="main.php">-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            Inicia la sessió-->
+<!--        </a>-->
+
+        <input type="submit" class="registra" value="Inicia Sessió">
+    </form>
+    <form id="login-form" class="form" action="registra.php" method="post">
+        <input type="submit" class="registra" value="Registrar">
     </form>
 </div>
 </body>

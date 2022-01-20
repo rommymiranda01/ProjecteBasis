@@ -67,9 +67,9 @@ class ClientsServiceImpl implements IClientsService
         // TODO: Implement addUser() method.
         $this->openConnection();
         try{
-            $statement = $this->conexio->prepare("INSERT INTO clients (dni, nom, adreca, codPostal, poble, email, telefon, foto) VALUES(?,?,?,?,?,?,?,?)");
+            $statement = $this->conexio->prepare("INSERT INTO clients (dni, nom, adreca, codPostal, poble, email, telefon, foto, password) VALUES(?,?,?,?,?,?,?,?,?)");
             $res = $statement->execute(
-                array($c->getDni(),$c->getNom(),$c->getAdreca(),$c->getCodPostal(),$c->getPoble(),$c->getEmail(),$c->getTelefon(),$c->getFoto())
+                array($c->getDni(),$c->getNom(),$c->getAdreca(),$c->getCodPostal(),$c->getPoble(),$c->getEmail(),$c->getTelefon(),$c->getFoto(), $c->getPassword())
             );
             return $res;
         }catch(PDOException $ex){
@@ -180,7 +180,7 @@ class ClientsServiceImpl implements IClientsService
         // TODO: Implement checkCred() method.
         $this->openConnection();
         try {
-            $statement = $this->conexio->prepare("SELECT * FROM user WHERE username=? and password=?");
+            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE nom=? and password=?");
             $statement->execute(
                 array($c->getNom(), $c->getPassword())
             );
