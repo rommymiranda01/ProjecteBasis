@@ -11,34 +11,33 @@
 <body>
 <div class="login-box">
     <h2>Registre</h2>
-<!--    <form action="../../controllers/usuarisController.php?action=editSave" enctype="multipart/form-data" method="post">-->
     <form action="../controllers/usuarisController.php?action=save" enctype="multipart/form-data" method="post">
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="dni" id="dni" required="">
             <label>Dni</label>
         </div>
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="nom" id="nom" required="">
             <label>Nom</label>
         </div>
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="adreca" id="adreca" required="">
             <label>Adreça</label>
         </div>
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="codPostal" id="codPostal" required="">
             <label>Cod Postal</label>
         </div>
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="poble" id="poble" required="">
             <label>Poble</label>
         </div>
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="email" id="email" required="">
             <label>Email</label>
         </div>
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="telefon" id="telefon" required="">
             <label>Telefon</label>
         </div>
         <div class="user-box">
@@ -46,7 +45,7 @@
             <label>Foto</label>
         </div>
         <div class="user-box">
-            <input type="password" name="" required="">
+            <input type="password" name="password" id="password" required="">
             <label>Password</label>
         </div>
         <input type="submit" class="registra" value="Registra">

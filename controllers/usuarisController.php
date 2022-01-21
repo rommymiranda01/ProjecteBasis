@@ -11,16 +11,6 @@ $con = new ClientsServiceImpl();
 $_SESSION["errors"] = false;
 
 switch ($action) {
-    case 'login':
-        $view = 'login.php';
-        include '../views/template.php';
-        break;
-
-    case 'logout':
-        unset($_SESSION['loggedUser']);
-        header('Location: ../views/login.php');
-        break;
-
     case 'list':
         $clients = $con->getAllUsers();
         $view = 'client/llista.php';
@@ -75,7 +65,7 @@ switch ($action) {
             $_SESSION['msgErrorFoto'] = 'Si us plau adjunta una imatge';
             $_SESSION['errors']=true;
         }else{
-            $dstFolder = "../views/client/img/";
+            $dstFolder = "../views/img/";
 
             $size =getimagesize($fTemp);
 
@@ -92,7 +82,7 @@ switch ($action) {
             $fullPath = $dstFolder . basename($_FILES['foto']["name"]);
             $res = move_uploaded_file($_FILES['foto']['tmp_name'], $fullPath);
             if ($res) {
-                $c = new Client( $_POST['dni'], $_POST['nom'], $_POST['adreca'], $_POST['codPostal'], $_POST['poble'], $_POST['email'], $_POST['telefon'], $_FILES['foto']['name']);
+                $c = new Client( $_POST['dni'], $_POST['nom'], $_POST['adreca'], $_POST['codPostal'], $_POST['poble'], $_POST['email'], $_POST['telefon'], $_FILES['foto']['name'], $_POST['password']);
                 $con->addUser($c);
                 header('Location: ../controllers/usuarisController.php?action=list');
             }
@@ -114,6 +104,7 @@ switch ($action) {
         $client->setPoble($_POST['poble']);
         $client->setEmail($_POST['email']);
         $client->setTelefon($_POST['telefon']);
+        $client->setPassword($_POST['password']);
         //die(var_dump($producte));
 
         if (!isset($_POST['nom']) || empty($_POST["nom"])){
@@ -179,35 +170,4 @@ switch ($action) {
         include '../views/template.php';
         break;
 
-    case 'checkLogin':
-        $dni = $_POST['dni'] ?? null;
-        $nom = $_POST['nom'] ?? null;
-        $adreca = $_POST['adreca'] ?? null;
-        $codPostal = $_POST['codPostal'] ?? null;
-        $poble = $_POST['poble'] ?? null;
-        $email = $_POST['email'] ?? null;
-        $telefon = $_POST['telefon'] ?? null;
-        $foto = $_POST['foto'] ?? null;
-        $password = $_POST['password'] ?? null;
-
-        $userTemp = new Client($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password);
-        $_SESSION['loggedUser'] = $con->checkCred($userTemp);
-
-        $_SESSION['login'] = array(true,false);
-
-        if ($_SESSION['errors']){
-            header('Location: ../views/login.php');
-        }else{
-            if (empty($_SESSION['loggedUser'])){
-                header('Location: ../views/login.php');
-            }else{
-                header('Location: ../views/main.php');
-            }
-        }
-
-        break;
-
-    case 'addClientsLog':
-
-        break;
 }

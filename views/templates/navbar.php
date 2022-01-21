@@ -14,7 +14,7 @@
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Clients</a>
         <div class="dropdown-content">
-<!--            <a href="../../controllers/usuarisController.php?action=add">Afegir Clients</a>-->
+            <a href="../../controllers/usuarisController.php?action=add">Afegir Clients</a>
             <a href="../../controllers/usuarisController.php?action=list">Llista Clients</a>
         </div>
     </li>
@@ -31,6 +31,6 @@
         </div>
     </li>
 
-    <li><a href="../../controllers/usuarisController.php?action=logout">Logout</a></li>
+    <li><a href="../../controllers/usersController.php?action=logout">Logout</a></li>
 
 </ul>

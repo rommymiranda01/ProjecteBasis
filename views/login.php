@@ -11,13 +11,13 @@
 <body>
 <div class="login-box">
     <h2>Login</h2>
-    <form id="login-form" class="form" action="../controllers/usuarisController.php?action=checkLogin" method="post">
+    <form id="login-form" class="form" action="../controllers/usersController.php?action=checkLogin" method="post">
         <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="nom" id="nom" required="">
             <label>Nom</label>
         </div>
         <div class="user-box">
-            <input type="password" name="" required="">
+            <input type="password" name="password" id="password" required="">
             <label>Password</label>
         </div>
 <!--        <a href="main.php">-->

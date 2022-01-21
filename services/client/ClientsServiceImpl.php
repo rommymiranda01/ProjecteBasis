@@ -91,7 +91,7 @@ class ClientsServiceImpl implements IClientsService
                 array($dni)
             );
             $result = $statement->fetch();
-            $client = new Client($result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto']);
+            $client = new Client($result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto'], $result['password']);
             return $client;
         }catch(PDOException $ex){
             echo "Error: " . $ex;
@@ -105,9 +105,9 @@ class ClientsServiceImpl implements IClientsService
         // TODO: Implement updateUserById() method.
         $this->openConnection();
         try{
-            $querySql = "UPDATE clients SET nom=?, adreca=?, codPostal=?, poble=?, email=?, telefon=?, foto=? WHERE dni=?";
+            $querySql = "UPDATE clients SET nom=?, adreca=?, codPostal=?, poble=?, email=?, telefon=?, foto=?, password=? WHERE dni=?";
             $statement = $this->conexio->prepare($querySql);
-            $res = $statement->execute(array($c->getNom(),$c->getAdreca(), $c->getCodPostal(), $c->getPoble(), $c->getEmail(), $c->getTelefon(), $c->getFoto(), $c->getDni()
+            $res = $statement->execute(array($c->getNom(),$c->getAdreca(), $c->getCodPostal(), $c->getPoble(), $c->getEmail(), $c->getTelefon(), $c->getFoto(), $c->getPassword(), $c->getDni()
             ));
             return $res;
         }catch(PDOException $ex){
