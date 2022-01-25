@@ -18,13 +18,14 @@ switch ($action){
         $telefon = $_POST['telefon'] ?? null;
         $foto = $_POST['foto'] ?? null;
         $password = $_POST['password'] ?? null;
+        $rol = $_POST['rol'] ?? null;
 
-        $userTemp = new Client($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password);
+        $userTemp = new Client($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password,$rol);
         $_SESSION['loggedUser'] = $con->checkCred($userTemp);
         //var_dump($userTemp);
         //var_dump($_SESSION['loggedUser']);
 
-        //$_SESSION['login'] = array(true, false);
+        $_SESSION['login'] = array(true, false);
 
 
             if (empty($_SESSION['loggedUser'])){

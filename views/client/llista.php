@@ -2,7 +2,7 @@
 foreach ($clients  as $c){
     ?>
     <div class="card">
-        <img src="<?=base_url();?>/views/client/img/<?php echo $c['foto']?>" alt="img" style="width:100%">
+        <img src="<?=base_url();?>/views/img/<?php echo $c['foto']?>" alt="img" style="width:100%">
         <div class="containerCard">
             <p class="card-title"><strong>Dni: </strong><?php echo $c['dni'] ?></p>
             <p class="card-text"><strong>Nom: </strong><?php echo $c['nom'] ?></p>

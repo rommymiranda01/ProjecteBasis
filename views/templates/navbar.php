@@ -30,7 +30,6 @@
             <a href="../../controllers/productesController.php?action=llistaEnd">Llista endarreriments</a>
         </div>
     </li>
-
     <li><a href="../../controllers/usersController.php?action=logout">Logout</a></li>
 
 </ul>

@@ -20,6 +20,14 @@
             <input type="password" name="password" id="password" required="">
             <label>Password</label>
         </div>
+
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Inicia sessió
+        </button>
 <!--        <a href="main.php">-->
 <!--            <span></span>-->
 <!--            <span></span>-->
@@ -27,11 +35,15 @@
 <!--            <span></span>-->
 <!--            Inicia la sessió-->
 <!--        </a>-->
-
-        <input type="submit" class="registra" value="Inicia Sessió">
     </form>
     <form id="login-form" class="form" action="registra.php" method="post">
-        <input type="submit" class="registra" value="Registrar">
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Registra
+        </button>
     </form>
 </div>
 </body>

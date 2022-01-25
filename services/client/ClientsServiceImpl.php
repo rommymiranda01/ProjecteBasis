@@ -91,7 +91,7 @@ class ClientsServiceImpl implements IClientsService
                 array($dni)
             );
             $result = $statement->fetch();
-            $client = new Client($result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto'], $result['password']);
+            $client = new Client($result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto'], $result['password'], $result['rol']);
             return $client;
         }catch(PDOException $ex){
             echo "Error: " . $ex;

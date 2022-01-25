@@ -106,6 +106,20 @@ if (isset($dni)){
                 ?>
             </div>
         </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="telefon">Password</label>
+            </div>
+            <div class="col-75">
+                <input type="password" id="password" name="password" placeholder="password.." value="<?php echo $client->getPassword() ?? '' ?>" class="feedback-input"><br>
+                <?php
+                if(isset($_SESSION['msgErrorTelefon'])){
+                    echo "<small id='flashErrorTelefon' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorTelefon'] ."</strong></small>";
+                    unset($_SESSION['msgErrorTelefon']);
+                }
+                ?>
+            </div>
+        </div>
         <br>
         <div class="row">
             <input type="submit" class="edita" value="Edita">

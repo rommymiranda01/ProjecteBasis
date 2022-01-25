@@ -48,11 +48,13 @@
             <input type="password" name="password" id="password" required="">
             <label>Password</label>
         </div>
-        <input type="submit" class="registra" value="Registra">
-        <!--        <a href="login.php">-->
-<!--            Registra-->
-<!--        </a>-->
-    </form>
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Registra
+        </button>    </form>
 </div>
 </body>
 </html>

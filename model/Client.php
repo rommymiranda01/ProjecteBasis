@@ -11,6 +11,7 @@ class Client
     private $telefon;
     private $foto;
     private $password;
+    private $rol;
 
     /**
      * @param $dni
@@ -22,8 +23,9 @@ class Client
      * @param $telefon
      * @param $foto
      * @param $password
+     * @param $rol
      */
-    public function __construct($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password)
+    public function __construct($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password, $rol)
     {
         $this->dni = $dni;
         $this->nom = $nom;
@@ -34,6 +36,7 @@ class Client
         $this->telefon = $telefon;
         $this->foto = $foto;
         $this->password = $password;
+        $this->rol = $rol;
     }
 
     /**
@@ -178,6 +181,22 @@ class Client
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    /**
+     * @param mixed $rol
+     */
+    public function setRol($rol): void
+    {
+        $this->rol = $rol;
     }
 
 
