@@ -1,5 +1,6 @@
 <?php
 $ranking=1;
+if ($_SESSION['loggedUser']['rol']=='admin'){
 ?>
 <h2>Rank Productes</h2>
 <table>
@@ -22,3 +23,8 @@ $ranking=1;
     }
     ?>
 </table>
+<?php
+}elseif ($_SESSION['loggedUser']['rol']=='user'){
+    echo "<h1>Ets un usuari, cal ser admin</h1>";
+}
+?>

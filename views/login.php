@@ -11,7 +11,7 @@
 <body>
 <div class="login-box">
     <h2>Login</h2>
-    <form id="login-form" class="form" action="../controllers/usersController.php?action=checkLogin" method="post">
+    <form id="login-form" class="form" action="../controllers/usuarisController.php?action=checkLogin" method="post">
         <div class="user-box">
             <input type="text" name="nom" id="nom" required="">
             <label>Nom</label>
@@ -28,14 +28,8 @@
             <span></span>
             Inicia sessió
         </button>
-<!--        <a href="main.php">-->
-<!--            <span></span>-->
-<!--            <span></span>-->
-<!--            <span></span>-->
-<!--            <span></span>-->
-<!--            Inicia la sessió-->
-<!--        </a>-->
     </form>
+
     <form id="login-form" class="form" action="registra.php" method="post">
         <button type="submit">
             <span></span>
@@ -45,6 +39,7 @@
             Registra
         </button>
     </form>
+
 </div>
 </body>
 </html>

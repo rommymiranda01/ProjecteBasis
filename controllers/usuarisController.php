@@ -84,7 +84,8 @@ switch ($action) {
             if ($res) {
                 $c = new Client( $_POST['dni'], $_POST['nom'], $_POST['adreca'], $_POST['codPostal'], $_POST['poble'], $_POST['email'], $_POST['telefon'], $_FILES['foto']['name'], $_POST['password'], 'user');
                 $con->addUser($c);
-                header('Location: ../controllers/usuarisController.php?action=list');
+                //header('Location: ../controllers/usuarisController.php?action=list');
+                header('Location: ../../views/login.php');
             }
         }
         break;
@@ -168,6 +169,44 @@ switch ($action) {
         $rankClients = $con->rankClientActiu();
         $view = 'client/rank.php';
         include '../views/template.php';
+        break;
+
+    case 'checkLogin':
+        $dni = $_POST['dni'] ?? null;
+        $nom = $_POST['nom'] ?? null;
+        $adreca = $_POST['adreca'] ?? null;
+        $codPostal = $_POST['codPostal'] ?? null;
+        $poble = $_POST['poble'] ?? null;
+        $email = $_POST['email'] ?? null;
+        $telefon = $_POST['telefon'] ?? null;
+        $foto = $_POST['foto'] ?? null;
+        $password = $_POST['password'] ?? null;
+        $rol = $_POST['rol'] ?? null;
+
+        $userTemp = new Client($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password,$rol);
+        $_SESSION['loggedUser'] = $con->checkCred($userTemp);
+        //var_dump($userTemp);
+        //var_dump($_SESSION['loggedUser']);
+
+        $_SESSION['login'] = array(true, false);
+
+
+        if (empty($_SESSION['loggedUser'])){
+            header('Location: ../views/login.php');
+        }else{
+            header('Location: ../views/main.php');
+        }
+
+        break;
+
+    case 'login':
+        $view = 'login.php';
+        include '../views/template.php';
+        break;
+
+    case 'logout':
+        unset($_SESSION['loggedUser']);
+        header('Location: ../views/login.php');
         break;
 
 }

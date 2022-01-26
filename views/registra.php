@@ -54,7 +54,8 @@
             <span></span>
             <span></span>
             Registra
-        </button>    </form>
+        </button>
+    </form>
 </div>
 </body>
 </html>

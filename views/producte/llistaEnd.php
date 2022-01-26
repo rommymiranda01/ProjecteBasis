@@ -1,4 +1,5 @@
 <?php
+if ($_SESSION['loggedUser']['rol']=='admin'){
 ?>
 <h2>Llista d'endarreriments</h2>
 <table>
@@ -23,3 +24,8 @@
     ?>
     </tbody>
 </table>
+<?php
+}elseif ($_SESSION['loggedUser']['rol']=='user'){
+    echo "<h1>Ets un usuari, cal ser admin</h1>";
+}
+?>

@@ -1,3 +1,6 @@
+<?php
+if ($_SESSION['loggedUser']['rol']=='admin'){
+?>
 <div class="app">
     <div class="search">
 <label for="cerca">Cerca: </label>
@@ -43,3 +46,8 @@
         </tbody>
 </table>
 </div>
+<?php
+}elseif ($_SESSION['loggedUser']['rol']=='user'){
+    echo "<h1>Ets un usuari, cal ser admin</h1>";
+}
+?>

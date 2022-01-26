@@ -1,6 +1,5 @@
 <?php
-//session_start();
-//include ('../../model/Producte.php');
+if ($_SESSION['loggedUser']['rol']=='admin'){
 ?>
 <div class="container">
         <form action="../../controllers/productesController.php?action=save" enctype="multipart/form-data" method="post">
@@ -67,3 +66,8 @@
         </div>
     </form>
 </div>
+<?php
+}elseif ($_SESSION['loggedUser']['rol']=='user'){
+    echo "<h1>Ets un usuari, cal ser admin</h1>";
+}
+?>
