@@ -11,15 +11,14 @@
     <title>Main</title>
 </head>
 <body>
-<header><h1>Web</h1></header>
-<nav>
+<header class="header">
+    <a href="" class="logo">Botiga RM</a>
     <?php
     include 'templates/navbar.php';
     ?>
-</nav>
+</header>
 
 <!--Slider-->
-
 <div class="slideshow-container">
 
     <div class="mySlides fade">
@@ -32,14 +31,11 @@
         <img src="img/logo.png" style="width:100%">
     </div>
 
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 </div>
 <br>
-
-<div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-</div>
-
 <!--Fi Slider-->
 
 <script src="js/main.js"></script>

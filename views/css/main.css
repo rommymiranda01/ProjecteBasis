@@ -1,19 +1,18 @@
-* {
-    margin: 0;
+html{
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
 }
-
 body {
+    padding: 0;
+    margin: 0;
     background: #f1f1f1;
-    margin: 2rem;
 }
 
 footer{
     display: flex;
     background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);
     width: 100%;
-    position: marker;
+    position: absolute;
     bottom: 0;
     left: 0;
     font-size: 20px;
@@ -24,7 +23,7 @@ label{
 }
 
 /*Navbar*/
-ul {
+/*ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -94,7 +93,7 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+}*/
 
 /*Cards Llista Productes*/
 .card {
@@ -332,9 +331,36 @@ img {vertical-align: middle;}
 /* Slideshow container */
 .slideshow-container {
     padding: 15px;
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+    max-width: 30%;
+    position: absolute;
+    margin: 5%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* Caption text */
@@ -358,21 +384,6 @@ img {vertical-align: middle;}
     top: 0;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active {
-    background-color: #717171;
-}
-
 /* Fading animation */
 .fade {
     -webkit-animation-name: fade;
@@ -393,5 +404,166 @@ img {vertical-align: middle;}
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
+    .prev, .next,.text {font-size: 11px}
+}
+
+@media screen {
+    
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1000px){
+    .slideshow-container{
+        margin-top: 30%
+    }
+}
+
+/* Navbar */
+a {
+    color: #000;
+}
+
+/* header */
+
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: relative;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 300px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+.app{
+    position: absolute;
+    margin-top: 5%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1000px){
+    .app{
+        margin-top: 20%;
+    }
+    footer{
+        position: absolute;
+    }
 }

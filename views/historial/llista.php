@@ -10,7 +10,9 @@ if ($_SESSION['loggedUser']['rol']=='admin'){
     <thead>
     <tr>
         <th>Referencia</th>
+        <th>Titol</th>
         <th>Dni</th>
+        <th>Nom</th>
         <th>Data</th>
         <th>Tipus Moviment</th>
         <th>Opcions</th>
@@ -21,14 +23,10 @@ if ($_SESSION['loggedUser']['rol']=='admin'){
         foreach ($historials as $h){
         ?>
         <tr>
-            <td>
-                <?php echo $h['refProducte']?>
-            </td>
-            <td>
-
-                <?php echo $h['dniClient']?>
-            </td>
-
+            <td><?php echo $h['refProducte']?></td>
+            <td><?php echo $h['titol']?></td>
+            <td><?php echo $h['dniClient']?></td>
+            <td><?php echo $h['nom']?></td>
             <td><?php echo $h['data']?></td>
             <td><?php echo $h['tipusMov']?></td>
             <td>
@@ -37,8 +35,6 @@ if ($_SESSION['loggedUser']['rol']=='admin'){
                     <input type="submit" class="eliminaLlista" value="Elimina">
                 </form>
             </td>
-<!--            <input type="hidden" name="titol" value="--><?php //$con->getProducteById($h['refProducte'])->getTitol() ?><!--">-->
-<!--            <input type="hidden" name="nom" value="--><?php //$con->getUserById($h['dniClient'])->getNom() ?><!--">-->
         </tr>
             <?php
         }
@@ -48,6 +44,7 @@ if ($_SESSION['loggedUser']['rol']=='admin'){
 </div>
 <?php
 }elseif ($_SESSION['loggedUser']['rol']=='user'){
-    echo "<h1>Ets un usuari, cal ser admin</h1>";
+    header('Location: ../../views/client/historialClient.php');
+    die();
 }
 ?>

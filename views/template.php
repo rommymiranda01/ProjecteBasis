@@ -5,16 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="<?=base_url();?>/views/img/shop.png">
     <link rel="stylesheet" href="<?=base_url();?>/views/css/main.css">
-    <title>Document</title>
+    <title>Botiga RM</title>
 </head>
 <body>
-    <header><h1>Web</h1></header>
-    <nav>
-        <?php
-        include 'templates/navbar.php';
-        ?>
-    </nav>
+<header class="header">
+    <a href="" class="logo">Botiga RM</a>
+    <?php
+    include 'templates/navbar.php';
+    ?>
+</header>
     <main>
         <?php
         include $view;

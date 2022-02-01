@@ -50,7 +50,10 @@ class HistorialsServiceImpl implements IHistorialsService
         // TODO: Implement getAllHistorials() method.
         $this->openConnection();
         try{
-            $statement = $this->conexio->prepare("SELECT * FROM historials");
+            //$statement = $this->conexio->prepare("SELECT * FROM historials");
+            $statement = $this->conexio->prepare("SELECT refProducte, titol, dniClient, nom, data, tipusMov FROM historials 
+    LEFT JOIN productes on historials.refProducte=productes.referencia 
+    LEFT JOIN clients ON historials.dniClient=clients.dni;");
             $statement->execute();
             $result = $statement->fetchAll();
 

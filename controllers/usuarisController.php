@@ -17,10 +17,10 @@ switch ($action) {
         include '../views/template.php';
         break;
 
-    case 'add':
-        $view = 'client/registraClient.php';
-        include '../views/template.php';
-        break;
+//    case 'add':
+//        $view = 'client/registraClient.php';
+//        include '../views/template.php';
+//        break;
 
     case 'save':
         $_SESSION["dades"] = $_POST;
@@ -187,9 +187,6 @@ switch ($action) {
         $_SESSION['loggedUser'] = $con->checkCred($userTemp);
         //var_dump($userTemp);
         //var_dump($_SESSION['loggedUser']);
-
-        $_SESSION['login'] = array(true, false);
-
 
         if (empty($_SESSION['loggedUser'])){
             header('Location: ../views/login.php');
