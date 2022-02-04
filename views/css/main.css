@@ -8,14 +8,23 @@ body {
     background: #f1f1f1;
 }
 
-footer{
-    display: flex;
-    background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);
-    width: 100%;
+/*footer{*/
+/*    display: flex;*/
+/*    background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);*/
+/*    width: 100%;*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    font-size: 20px;*/
+/*}*/
+
+footer {
     position: absolute;
     bottom: 0;
-    left: 0;
-    font-size: 20px;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
 }
 
 label{
@@ -564,10 +573,21 @@ a {
     }
 
     footer{
-        bottom: -15%;
+        bottom: -20%;
     }
 
     .container{
         margin-top: 20%;
     }
+
+    .containerCards{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
+
+/*@media only screen and (min-width: 1000px){*/
+/*    footer{*/
+/*        bottom: -100%;*/
+/*    }*/
+/*}*/
