@@ -1,7 +1,7 @@
+<div class="containerCards">
 <?php
 foreach ($productes as $prod) {
     ?>
-    <div class="containerCards">
         <div class="card">
             <img src="<?= base_url(); ?>/views/img/<?php echo $prod['imatge'] ?>" alt="img" style="width:100%">
             <div class="containerCard">

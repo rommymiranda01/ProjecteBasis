@@ -1,3 +1,4 @@
+<div class="containerCards">
 <?php
 if ($_SESSION['loggedUser']['rol']=='admin'){
 foreach ($clients  as $c){
@@ -25,9 +26,8 @@ foreach ($clients  as $c){
 
         </div>
     </div>
+</div>
     <?php
     }
-}elseif ($_SESSION['loggedUser']['rol']=='user'){
-    echo "<h1>Ets un usuari, cal ser admin</h1>";
 }
 ?>

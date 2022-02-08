@@ -133,4 +133,8 @@ switch ($action){
         $view = 'producte/llistaEnd.php';
         include '../views/template.php';
         break;
+
+    case 'rankP':
+        $rankP = $con->rankLlogats();
+        break;
 }

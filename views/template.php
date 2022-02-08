@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION)){
+    session_start();
+}
+include_once '../services/client/ClientsServiceImpl.php';
+
+$con = new ClientsServiceImpl();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,9 +29,6 @@
         include $view;
         ?>
     </main>
-    <footer>
-        <p>Rommy Miranda</p>
-    </footer>
-    <script src="../views/js/index.js" type="text/javascript"></script>
+<script src="../views/js/index.js" type="text/javascript"></script>
 </body>
 </html>

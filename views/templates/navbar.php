@@ -26,12 +26,11 @@
     <?php
     if ($_SESSION['loggedUser']['rol'] == 'admin') {
         ?>
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Clients</a>
-            <div class="dropdown-content">
-                <a href="../../controllers/usuarisController.php?action=list">Llista Clients</a>
-            </div>
-        </li>
+        <li class="dropdown"><a href="../../controllers/usuarisController.php?action=list">Llista Clients</a></li>
+        <?php
+    }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
+        ?>
+        <li class="dropdown"><a href="../../controllers/usuarisController.php?action=edit">Perfil</a></li>
         <?php
     }
     ?>
@@ -59,6 +58,6 @@
         <?php
     }
     ?>
-
+<!--    <li><a href="../../controllers/usuarisController.php?action=edit">Perfil</a></li>-->
     <li><a href="../../controllers/usuarisController.php?action=logout">Logout</a></li>
 </ul>

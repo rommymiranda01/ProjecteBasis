@@ -8,19 +8,8 @@ body {
     background: #f1f1f1;
 }
 
-/*footer{*/
-/*    display: flex;*/
-/*    background: linear-gradient(to right, #f70000, #FBE0DB, #1100ff, #F6FBDB);*/
-/*    width: 100%;*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    font-size: 20px;*/
-/*}*/
-
 footer {
     position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: gray;
     color: white;
@@ -570,6 +559,8 @@ a {
 @media only screen and (min-width: 200px) and (max-width: 1000px){
     .app{
         margin-top: 20%;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
     footer{
@@ -578,11 +569,20 @@ a {
 
     .container{
         margin-top: 20%;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
     .containerCards{
+        /*position: absolute;*/
+        /*margin-top: 20%;*/
         display: flex;
         flex-wrap: wrap;
+    }
+    .card{
+        margin-right: 10px;
+        margin-left: 10px;
+        width: 100%;
     }
 }
 
