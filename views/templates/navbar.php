@@ -1,7 +1,7 @@
 <input class="menu-btn" type="checkbox" id="menu-btn"/>
 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 <ul class="menu">
-    <li><a href="../../views/main.php">Home</a></li>
+    <li><a href="../../controllers/portadaController.php?action=main">Home</a></li>
 
     <!-- Productes -->
     <?php
@@ -30,7 +30,12 @@
         <?php
     }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
         ?>
-        <li class="dropdown"><a href="../../controllers/usuarisController.php?action=edit">Perfil</a></li>
+            <li>
+                <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
+                    <input type="hidden" value="<?php echo $_SESSION['loggedUser']['dni'] ?>" name="dni">
+                    <input type="submit" class="nameNav" value="<?php echo $_SESSION['loggedUser']['nom']?>">
+                </form>
+            </li>
         <?php
     }
     ?>
@@ -40,7 +45,17 @@
         ?>
         <li><a href="../../controllers/historialController.php?action=list">Llistat historials</a></li>
         <?php
-    }
+    }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
+        ?>
+            <li>
+                <form action="../../controllers/usuarisController.php?action=listHistorial" method="post">
+                    <input type="hidden" value="<?php echo $_SESSION['loggedUser']['dni'] ?>" name="dni">
+                    <input type="submit" class="nameNav" value="Llistat Historial">
+                </form>
+            </li>
+<!--    <li><a href="../../controllers/usuarisController.php?action=listHistorial"></a>Llistat historial</li>-->
+    <?php
+        }
     ?>
 
     <!-- Rank -->
@@ -58,6 +73,6 @@
         <?php
     }
     ?>
-<!--    <li><a href="../../controllers/usuarisController.php?action=edit">Perfil</a></li>-->
+
     <li><a href="../../controllers/usuarisController.php?action=logout">Logout</a></li>
 </ul>

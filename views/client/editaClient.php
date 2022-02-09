@@ -8,10 +8,6 @@ if (isset($dni)){
     $client = $con->getUserById($dni);
 }
 ?>
-<form action="<?=base_url();?>/controllers/usuarisController.php?action=listHistorial" method="post">
-    <input type="hidden" value="<?php echo $_POST['dni'] ?>" name="dni">
-    <input type="submit" class="llistatHistorial" value="Llistat Historial">
-</form>
 <div class="container">
     <form action="../../controllers/usuarisController.php?action=editSave" enctype="multipart/form-data" method="post">
         <div class="row">

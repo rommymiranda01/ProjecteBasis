@@ -1,19 +1,7 @@
-html{
-    padding: 0;
-    margin: 0;
-}
 body {
     padding: 0;
     margin: 0;
     background: #f1f1f1;
-}
-
-footer {
-    position: absolute;
-    width: 100%;
-    background-color: gray;
-    color: white;
-    text-align: center;
 }
 
 label{
@@ -21,38 +9,6 @@ label{
 }
 
 /*Navbar*/
-/*ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-    border-right:1px solid #bbb;
-}
-
-li:last-child {
-    border-right: none;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: red;
-}
-
-.active {
-    background-color: red;
-}*/
 
 li a, .dropbtn {
     display: inline-block;
@@ -123,9 +79,8 @@ form{
 }
 
 .container {
-    position: absolute;
-    margin-top: 5%;
     margin-left: 15px;
+    margin-bottom: 20px;
     width: 98%;
 }
 
@@ -320,6 +275,7 @@ select{
 
 /* Edita Client */
 .llistatHistorial{
+    margin-left: 15px;
     background: steelblue;
     color: white;
     font-size: 25px;
@@ -424,9 +380,10 @@ a {
 .header {
     background-color: #fff;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-    position: absolute;
+    position: relative;
     width: 100%;
     z-index: 3;
+    top: 0;
 }
 
 .header ul {
@@ -542,7 +499,7 @@ a {
     }
     .header .menu {
         clear: none;
-        float: right;
+        /*float: right;*/
         max-height: none;
     }
     .header .menu-icon {
@@ -550,32 +507,25 @@ a {
     }
 }
 
+.nameNav{
+    padding-left: 12px;
+    padding-top: 12px;
+    background: none;
+    border: none;
+}
+
 .app{
-    position: absolute;
-    margin-top: 5%;
     width: 100%;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 1000px){
-    .app{
-        margin-top: 20%;
-        margin-right: 5px;
-        margin-left: 5px;
-    }
-
-    footer{
-        bottom: -20%;
-    }
 
     .container{
-        margin-top: 20%;
-        margin-right: 5px;
-        margin-left: 5px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
     .containerCards{
-        /*position: absolute;*/
-        /*margin-top: 20%;*/
         display: flex;
         flex-wrap: wrap;
     }
@@ -585,9 +535,3 @@ a {
         width: 100%;
     }
 }
-
-/*@media only screen and (min-width: 1000px){*/
-/*    footer{*/
-/*        bottom: -100%;*/
-/*    }*/
-/*}*/
