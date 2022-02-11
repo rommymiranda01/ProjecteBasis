@@ -33,7 +33,7 @@ switch ($action){
         }else {
             $historial = new Historial(null, $_POST['referencia'], $DateAndTime, $_POST['tipusMoviment'], $_POST['dni']);
             $con->addHistorial($historial);
-            header('Location: ../controllers/historialController.php?action=list');
+            header('Location: ../controllers/productesController.php?action=list');
         }
         break;
 
@@ -63,7 +63,7 @@ switch ($action){
 
         if (isset($historial)) {
         $con->updateHistorial($historial);
-        header('Location: ../controllers/historialController.php?action=list');
+            header('Location: ../controllers/productesController.php?action=list');
         }
         break;
 

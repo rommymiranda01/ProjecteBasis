@@ -26,7 +26,7 @@
                 <label for="descripcio">Dni Client</label>
             </div>
             <div class="col-75">
-                <input type="text" id="dni" name="dni" placeholder="Dni.." class="feedback-input"><br>
+                <input type="text" id="dni" name="dni" placeholder="Dni.." class="feedback-input" value="<?php echo $_SESSION['loggedUser']['dni'] ?>"><br>
                 <?php
                 if(isset($_SESSION['msgErrorDni'])){
                     echo "<small id='flashErrorDni' class='form-text text-danger font-weight-bold'><strong>".$_SESSION['msgErrorDni'] ."</strong></small>";

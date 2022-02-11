@@ -145,7 +145,7 @@ switch ($action) {
 
         if (isset($client)) {
             $con->updateUserById($client);
-            header('Location: ../controllers/usuarisController.php?action=list');
+            header('Location: ../controllers/portadaController.php');
         }
         break;
 
