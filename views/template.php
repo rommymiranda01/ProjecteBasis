@@ -19,7 +19,7 @@ $con = new ClientsServiceImpl();
 </head>
 <body>
 <header class="header">
-    <a href="" class="logo">Botiga RM</a>
+    <a href="../controllers/portadaController.php" class="logo">Botiga RM</a>
     <?php
     include 'templates/navbar.php';
     ?>
@@ -30,5 +30,6 @@ $con = new ClientsServiceImpl();
         ?>
     </main>
 <script src="../views/js/index.js" type="text/javascript"></script>
+<script src="../views/js/main.js" type="text/javascript"></script>
 </body>
 </html>

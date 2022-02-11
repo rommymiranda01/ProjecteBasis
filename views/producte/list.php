@@ -32,7 +32,7 @@ foreach ($productes as $prod) {
                 </form>
             </div>
         </div>
-    </div>
     <?php
 }
 ?>
+</div>

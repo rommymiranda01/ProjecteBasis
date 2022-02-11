@@ -26,8 +26,8 @@ foreach ($clients  as $c){
 
         </div>
     </div>
-</div>
     <?php
     }
 }
 ?>
+</div>

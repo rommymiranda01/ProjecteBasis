@@ -1,7 +1,7 @@
 <input class="menu-btn" type="checkbox" id="menu-btn"/>
 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 <ul class="menu">
-    <li><a href="../../controllers/portadaController.php?action=main">Home</a></li>
+    <li><a href="../../controllers/portadaController.php">Home</a></li>
 
     <!-- Productes -->
     <?php
