@@ -289,7 +289,7 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-    background-color: #03e9f4;
+    background-color: #BFBFBF;
 }
 
 /* Next & previous buttons */
@@ -396,6 +396,11 @@ a {
 
 .header li a:hover,
 .header .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.header li input[type=submit]:hover,
+.header .menu-btn:hover{
     background-color: #f4f4f4;
 }
 
@@ -508,6 +513,7 @@ a {
 }
 
 .app{
+    margin-bottom: 30px;
     width: 100%;
 }
 
@@ -517,7 +523,6 @@ a {
 }
 
 @media only screen and (min-width: 200px) and (max-width: 1000px){
-
     .container{
         margin-right: 10px;
         margin-left: 10px;
@@ -536,5 +541,8 @@ a {
 
     .slideshow-container{
         width: 100%;
+    }
+    .prev, .next,.text{
+        margin-top: 5px;
     }
 }

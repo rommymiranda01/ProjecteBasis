@@ -30,12 +30,26 @@
         <?php
     }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
         ?>
-            <li>
-                <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
+<!--            <li>-->
+<!--                <form action="--><?//=base_url();?><!--/controllers/usuarisController.php?action=edit" method="post">-->
+<!--                    <input type="hidden" value="--><?php //echo $_SESSION['loggedUser']['dni'] ?><!--" name="dni">-->
+<!--                    <input type="submit" class="nameNav" value="--><?php //echo $_SESSION['loggedUser']['nom']?><!--">-->
+<!--                </form>-->
+<!--            </li>-->
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><?php echo $_SESSION['loggedUser']['nom']?></a>
+            <div class="dropdown-content">
+                <form action="<?= base_url(); ?>/controllers/usuarisController.php?action=edit" method="post">
                     <input type="hidden" value="<?php echo $_SESSION['loggedUser']['dni'] ?>" name="dni">
-                    <input type="submit" class="nameNav" value="<?php echo $_SESSION['loggedUser']['nom']?>">
+                    <input type="submit" class="nameNav" value="Canviar dades">
                 </form>
-            </li>
+                <form action="../../controllers/usuarisController.php?action=listHistorial" method="post">
+                    <input type="hidden" value="<?php echo $_SESSION['loggedUser']['dni'] ?>" name="dni">
+                    <input type="submit" class="nameNav" value="Llistat Historial">
+                </form>
+            </div>
+        </li>
         <?php
     }
     ?>
@@ -45,16 +59,6 @@
         ?>
         <li><a href="../../controllers/historialController.php?action=list">Llistat historials</a></li>
         <?php
-    }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
-        ?>
-            <li>
-                <form action="../../controllers/usuarisController.php?action=listHistorial" method="post">
-                    <input type="hidden" value="<?php echo $_SESSION['loggedUser']['dni'] ?>" name="dni">
-                    <input type="submit" class="nameNav" value="Llistat Historial">
-                </form>
-            </li>
-<!--    <li><a href="../../controllers/usuarisController.php?action=listHistorial"></a>Llistat historial</li>-->
-    <?php
         }
     ?>
 

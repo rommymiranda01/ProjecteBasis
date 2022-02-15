@@ -20,7 +20,7 @@ foreach ($productes as $prod) {
                         <input type="submit" class="eliminaLlista" value="Elimina">
                     </form>
                     <?php
-                }
+                }else if ($_SESSION['loggedUser']['rol'] == 'user') {
                 ?>
                 <form action="<?= base_url(); ?>/controllers/historialController.php?action=add" method="post">
                     <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
@@ -30,6 +30,9 @@ foreach ($productes as $prod) {
                     <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
                     <input type="submit" class="retorna" value="Retorna">
                 </form>
+                <?php
+                }
+                ?>
             </div>
         </div>
     <?php
