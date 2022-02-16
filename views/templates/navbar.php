@@ -30,12 +30,6 @@
         <?php
     }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
         ?>
-<!--            <li>-->
-<!--                <form action="--><?//=base_url();?><!--/controllers/usuarisController.php?action=edit" method="post">-->
-<!--                    <input type="hidden" value="--><?php //echo $_SESSION['loggedUser']['dni'] ?><!--" name="dni">-->
-<!--                    <input type="submit" class="nameNav" value="--><?php //echo $_SESSION['loggedUser']['nom']?><!--">-->
-<!--                </form>-->
-<!--            </li>-->
 
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn"><?php echo $_SESSION['loggedUser']['nom']?></a>

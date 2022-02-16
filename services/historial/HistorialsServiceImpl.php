@@ -126,7 +126,6 @@ class HistorialsServiceImpl implements IHistorialsService
         $this->openConnection();
         $historial = null;
         try{
-
             $statement = $this->conexio->prepare("SELECT * FROM historials WHERE refProducte= ?");
             $statement->execute(
                 array($referencia)

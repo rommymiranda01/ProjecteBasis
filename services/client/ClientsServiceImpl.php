@@ -142,7 +142,10 @@ class ClientsServiceImpl implements IClientsService
         // TODO: Implement getHistorialById() method.
         $this->openConnection();
         try{
-            $statement = $this->conexio->prepare("SELECT * FROM historials LEFT JOIN productes ON historials.refProducte = productes.referencia WHERE historials.dniClient=?");
+            $statement = $this->conexio->prepare("SELECT * FROM historials 
+           LEFT JOIN productes on historials.refProducte=productes.referencia 
+           WHERE historials.dniClient=?");
+            //$statement = $this->conexio->prepare("SELECT * FROM historials LEFT JOIN productes ON historials.refProducte = productes.referencia WHERE historials.dniClient=?");
             $statement->execute(array($dni));
             $result = $statement->fetchAll();
 
