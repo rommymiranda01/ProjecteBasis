@@ -2,7 +2,6 @@
     <table>
         <thead>
         <tr>
-            <th>Id</th>
             <th>Referencia</th>
             <th>Titol</th>
             <th>Dni</th>
@@ -15,7 +14,6 @@
         foreach ($historial as $h){
         ?>
             <tr>
-                <td><?php echo $h['id'] ?></td>
                 <td><?php echo $h['refProducte'] ?></td>
                 <td><?php echo $h['titol'] ?></td>
                 <td><?php echo $h['dniClient'] ?></td>

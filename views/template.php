@@ -15,9 +15,21 @@ $con = new ClientsServiceImpl();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="<?=base_url();?>/views/img/shop.png">
     <link rel="stylesheet" href="<?=base_url();?>/views/css/main.css">
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="<?=base_url();?>/views/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?=base_url();?>/views/css/owl.theme.default.min.css">
+
+    <!-- javascript -->
+    <script src="<?=base_url();?>/views/js/owl.carousel.js"></script>
+    <script src="<?=base_url();?>/views/js/jquery.min.js"></script>
+
     <title>Botiga RM</title>
 </head>
 <body>
+
+
+
 <header class="header">
     <a href="../controllers/portadaController.php" class="logo">Botiga RM</a>
     <?php
@@ -28,8 +40,28 @@ $con = new ClientsServiceImpl();
         <?php
         include $view;
         ?>
+
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            })
+        </script>
     </main>
 <script src="../views/js/index.js" type="text/javascript"></script>
 <script src="../views/js/main.js" type="text/javascript"></script>
+
 </body>
 </html>

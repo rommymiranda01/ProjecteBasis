@@ -52,12 +52,9 @@ switch ($action){
         $Object = new DateTime();
         $DateAndTime = $Object->format("Y-m-d h:i:s");
 
-        //$referencia = $_POST['referencia'] ?? null;
+        $referencia = $_POST['referencia'] ?? null;
         //die(var_dump($referencia));
-        $id = $_POST['id'] ?? null;
-        die(var_dump($id));
-        //$historial = $con->getHistorialById($id);
-        //$historial = $con->getHistorialById($referencia);
+        $historial = $con->getHistorialById($referencia);
 
         $historial->setTipusMoviment($_POST['tipusMoviment']);
         $historial->setDni($_POST['dni']);

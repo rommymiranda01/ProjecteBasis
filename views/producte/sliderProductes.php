@@ -1,4 +1,4 @@
-<div class="ContainerSlide">
+<div class="ContainerSlide" id="slide1">
     <h2>Ranking de productes llogats</h2>
     <div class="slideshow-container">
         <?php
@@ -22,7 +22,7 @@
 <?php
 $ranking = 1;
 ?>
-<div class="ContainerSlide">
+<div class="ContainerSlide" id="slide2">
     <h2>Ranking de clients</h2>
     <div class="slideshow-container">
         <?php
@@ -41,4 +41,19 @@ $ranking = 1;
         }
         ?>
     </div>
+</div>
+
+<div class="owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
 </div>
