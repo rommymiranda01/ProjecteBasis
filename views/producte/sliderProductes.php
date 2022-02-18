@@ -49,6 +49,25 @@ $ranking = 1;
     <?php
 }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
 ?>
+    <h1>Ranking Productes</h1>
+    <div class="owl-carousel owl-theme">
+
+        <?php
+        foreach ($rankP as $p) {
+            ?>
+            <div class="item">
+                <div class="containerCard">
+                    <img src="<?= base_url(); ?>/views/img/<?php echo $p['imatge'] ?>" alt="img" style="width:100%">
+                    <p class="card-text"><strong>Titol: </strong><?php echo $p['titol'] ?></p>
+                    <p class="card-text"><strong>Descripcio: </strong><?php echo $p['descripcio'] ?></p>
+                </div>
+            </div>
+
+            <?php
+        }
+        ?>
+    </div>
+
 
 <h1>Ranking clients</h1>
 <div class="owl-carousel owl-theme">
@@ -59,26 +78,6 @@ $ranking = 1;
             <img src="<?= base_url(); ?>/views/img/<?php echo $c['foto'] ?>" alt="img" style="width:100%">
             <p class="card-text"><strong>Nom: </strong><?php echo $c['nom'] ?></p>
         </div>
-        <?php
-    }
-    ?>
-</div>
-<br>
-
-<h1>Ranking Productes</h1>
-<div class="owl-carousel owl-theme">
-
-    <?php
-    foreach ($rankP as $p) {
-        ?>
-        <div class="item">
-            <div class="containerCard">
-                <img src="<?= base_url(); ?>/views/img/<?php echo $p['imatge'] ?>" alt="img" style="width:100%">
-                <p class="card-text"><strong>Titol: </strong><?php echo $p['titol'] ?></p>
-                <p class="card-text"><strong>Descripcio: </strong><?php echo $p['descripcio'] ?></p>
-            </div>
-        </div>
-
         <?php
     }
     ?>
