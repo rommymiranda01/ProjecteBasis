@@ -141,7 +141,7 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement rankLlogats() method.
         $this->openConnection();
         try{
-            $querySql = "SELECT referencia,titol, descripcio, COUNT(referencia) as productes_llogats FROM productes
+            $querySql = "SELECT referencia,titol, descripcio, imatge, COUNT(referencia) as productes_llogats FROM productes
             LEFT JOIN historials on historials.refProducte=productes.referencia
             GROUP BY 1 ORDER BY productes_llogats DESC;";
             $statement = $this->conexio->prepare($querySql);

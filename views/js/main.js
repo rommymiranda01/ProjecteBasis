@@ -29,3 +29,20 @@ function showSlides(n, carousel) {
 
     slides[slideIndex[carousel.id]-1].style.display = "block";
 }
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:3
+        }
+    }
+})

@@ -20,10 +20,6 @@ $con = new ClientsServiceImpl();
     <link rel="stylesheet" href="<?=base_url();?>/views/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?=base_url();?>/views/css/owl.theme.default.min.css">
 
-    <!-- javascript -->
-    <script src="<?=base_url();?>/views/js/owl.carousel.js"></script>
-    <script src="<?=base_url();?>/views/js/jquery.min.js"></script>
-
     <title>Botiga RM</title>
 </head>
 <body>
@@ -41,27 +37,12 @@ $con = new ClientsServiceImpl();
         include $view;
         ?>
 
-        <script>
-            $('.owl-carousel').owlCarousel({
-                loop:true,
-                margin:10,
-                nav:true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:3
-                    },
-                    1000:{
-                        items:5
-                    }
-                }
-            })
-        </script>
     </main>
-<script src="../views/js/index.js" type="text/javascript"></script>
-<script src="../views/js/main.js" type="text/javascript"></script>
+<!-- javascript -->
+<script src="<?=base_url();?>/views/js/jquery.min.js"></script>
+<script src="<?=base_url();?>/views/js/owl.carousel.js"></script>
 
+<script src="../views/js/main.js" type="text/javascript"></script>
+<script src="../views/js/index.js" type="text/javascript"></script>
 </body>
 </html>

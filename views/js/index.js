@@ -34,4 +34,7 @@ function filter() {
 
     });
 }
-document.getElementById("searchInput").addEventListener("keyup", filter);
+const searchInput = document.getElementById("searchInput");
+if (searchInput){
+    searchInput.addEventListener("keyup", filter);
+}
