@@ -76,7 +76,9 @@ switch ($action) {
         }
 
         if ($_SESSION["errors"]){
-            header('Location: ../controllers/usuarisController.php?action=add');
+            //header('Location: ../controllers/usuarisController.php?action=add');
+            header('Location: ../views/registra.php');
+
         }else {
             unset($_SESSION["dades"]);
             $fullPath = $dstFolder . basename($_FILES['foto']["name"]);

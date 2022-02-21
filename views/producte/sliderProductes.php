@@ -9,6 +9,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
             ?>
             <div class="mySlides fade">
                 <div class="containerCard">
+                    <img src="<?= base_url(); ?>/views/img/<?php echo $p['imatge'] ?>" alt="img" style="width:30%">
                     <p class="card-title"><strong>Número de vegades
                             llogat: </strong><?php echo $p['productes_llogats'] ?></p>
                     <p class="card-text"><strong>Titol: </strong><?php echo $p['titol'] ?></p>
@@ -34,6 +35,7 @@ $ranking = 1;
             ?>
             <div class="mySlides fade">
                 <div class="containerCard">
+                    <img src="<?= base_url(); ?>/views/img/<?php echo $c['foto'] ?>" alt="img" style="width:30%">
                     <p class="card-text"><strong>Top: </strong><?php echo $ranking ?></p>
                     <p class="card-text"><strong>Nom: </strong><?php echo $c['nom'] ?></p>
                 </div>
@@ -53,17 +55,19 @@ $ranking = 1;
     <div class="owl-carousel owl-theme">
 
         <?php
+        $rank=1;
         foreach ($rankP as $p) {
             ?>
             <div class="item">
-                <div class="containerCard">
+                <div class="card1">
                     <img src="<?= base_url(); ?>/views/img/<?php echo $p['imatge'] ?>" alt="img" style="width:100%">
-                    <p class="card-text"><strong>Titol: </strong><?php echo $p['titol'] ?></p>
-                    <p class="card-text"><strong>Descripcio: </strong><?php echo $p['descripcio'] ?></p>
+                    <p class="card1-text"><strong>Top: </strong><?php echo $rank ?></p>
+                    <p class="card1-text"><strong>Titol: </strong><?php echo $p['titol'] ?></p>
+                    <p class="card1-text"><strong>Descripcio: </strong><?php echo $p['descripcio'] ?></p>
                 </div>
             </div>
-
             <?php
+            $rank++;
         }
         ?>
     </div>
@@ -72,13 +76,18 @@ $ranking = 1;
 <h1>Ranking clients</h1>
 <div class="owl-carousel owl-theme">
     <?php
+    $rank = 1;
     foreach ($rankC as $c) {
         ?>
         <div class="item">
-            <img src="<?= base_url(); ?>/views/img/<?php echo $c['foto'] ?>" alt="img" style="width:100%">
-            <p class="card-text"><strong>Nom: </strong><?php echo $c['nom'] ?></p>
+            <div class="card1">
+                <img src="<?= base_url(); ?>/views/img/<?php echo $c['foto'] ?>" alt="img" style="width:100%">
+                <p class="card-text"><strong>Top: </strong><?php echo $rank ?></p>
+                <p class="card-text"><strong>Nom: </strong><?php echo $c['nom'] ?></p>
+            </div>
         </div>
         <?php
+        $rank++;
     }
     ?>
 </div>
