@@ -122,6 +122,18 @@ switch ($action){
         include '../views/template.php';
         break;
 
+    case 'listProductes':
+        $producteList = $con->getAllProductes();
+        $view = 'producte/llistaProductes.php';
+        include '../views/template.php';
+        break;
+
+    case 'editLlista':
+        $prod = $_POST['productes'];
+        die(var_dump($prod));
+        //print_r($prod);
+        break;
+
     case 'rank':
         $rankProductes = $con->rankLlogats();
         $view = 'producte/rank.php';

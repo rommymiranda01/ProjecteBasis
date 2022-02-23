@@ -12,6 +12,7 @@
             <div class="dropdown-content">
                 <a href="../../controllers/productesController.php?action=add">Afegir Productes</a>
                 <a href="../../controllers/productesController.php?action=list">Llista Productes</a>
+                <a href="../../controllers/productesController.php?action=listProductes">Llista Productes 2</a>
             </div>
         </li>
         <?php

@@ -157,8 +157,16 @@ td{
 }
 
 .imgTable{
-    width: 15%;
-    /*justify-content: center;*/
+    width:40%;
+    justify-content: center;
+}
+
+tr td:first-child{
+    width:20%;
+}
+
+tr td:last-child{
+    width:15%;
 }
 
 table {
@@ -285,7 +293,7 @@ select{
 
 /*Slider main*/
 .mySlides {display: none;}
-img {vertical-align: middle;}
+/*img {vertical-align: middle;}*/
 
 /* Slideshow container */
 .slideshow-container {
@@ -525,7 +533,7 @@ a {
 
 .card1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 70%;
+    max-width: 80%;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -533,6 +541,10 @@ a {
 
 .card1 button:hover {
     opacity: 0.7;
+}
+
+.card1-text{
+    margin-bottom: 5%;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 1000px){
@@ -557,5 +569,9 @@ a {
     }
     .prev, .next,.text{
         margin-top: 30px;
+    }
+
+    .imgTable{
+        width: 70%;
     }
 }

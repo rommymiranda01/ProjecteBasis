@@ -193,7 +193,7 @@ switch ($action) {
         if (empty($_SESSION['loggedUser'])){
             header('Location: ../views/login.php');
         }else{
-            header('Location: ../controllers/portadaController.php?action=main');
+            header('Location: ../controllers/portadaController.php');
         }
 
         break;
