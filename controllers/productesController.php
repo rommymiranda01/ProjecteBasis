@@ -130,8 +130,10 @@ switch ($action){
 
     case 'editLlista':
         $prod = $_POST['productes'];
-        die(var_dump($prod));
-        //print_r($prod);
+
+        //$prod
+
+        //die(var_dump($prod));
         break;
 
     case 'rank':

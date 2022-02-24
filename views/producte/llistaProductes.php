@@ -29,10 +29,10 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                         <td><input type="text" value="<?php echo $prod['descripcio'] ?>" name="productes[<?php echo $comptador ?>][descripcio]"></td>
 
                         <td>
-                            <form action="../../controllers/productesController.php?action=edit" method="post">
-                                <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
-                                <input type="submit" class="editaLlista" value="Edit">
-                            </form>
+<!--                            <form action="../../controllers/productesController.php?action=edit" method="post">-->
+<!--                                <input type="hidden" value="--><?php //echo $prod['referencia'] ?><!--" name="referencia">-->
+<!--                                <input type="submit" class="editaLlista" value="Edit">-->
+<!--                            </form>-->
 
                             <form action="../../controllers/productesController.php?action=elimina" method="post">
                                 <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
