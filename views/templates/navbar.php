@@ -36,7 +36,7 @@
             <a href="javascript:void(0)" class="dropbtn"><?php echo $_SESSION['loggedUser']['nom']?></a>
             <div class="dropdown-content">
                 <form action="<?= base_url(); ?>/controllers/usuarisController.php?action=edit" method="post">
-                    <input type="hidden" value="<?php echo $_SESSION['loggedUser']['dni'] ?>" name="dni">
+                    <input type="hidden" value="<?php echo $_SESSION['loggedUser']['id'] ?>" name="id">
                     <input type="submit" class="nameNav" value="Canviar dades">
                 </form>
                 <form action="../../controllers/usuarisController.php?action=listHistorial" method="post">

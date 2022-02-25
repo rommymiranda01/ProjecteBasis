@@ -31,7 +31,7 @@ switch ($action){
         if ($_SESSION["errors"]){
             header('Location: ../controllers/historialController.php?action=add');
         }else {
-            $historial = new Historial(null, $_POST['referencia'], $DateAndTime, $_POST['tipusMoviment'], $_POST['dni']);
+            $historial = new Historial(null, $_POST['id'], $DateAndTime, $_POST['tipusMoviment'], $_POST['dni']);
             $con->addHistorial($historial);
             header('Location: ../controllers/productesController.php?action=list');
         }
@@ -52,9 +52,9 @@ switch ($action){
         $Object = new DateTime();
         $DateAndTime = $Object->format("Y-m-d h:i:s");
 
-        $referencia = $_POST['referencia'] ?? null;
+        $id = $_POST['id'] ?? null;
         //die(var_dump($referencia));
-        $historial = $con->getHistorialById($referencia);
+        $historial = $con->getHistorialById($id);
 
         $historial->setTipusMoviment($_POST['tipusMoviment']);
         $historial->setDni($_POST['dni']);

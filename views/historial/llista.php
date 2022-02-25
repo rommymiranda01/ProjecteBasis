@@ -10,7 +10,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
             <thead>
             <tr>
                 <th>Referencia</th>
-                <th>Titol</th>
+<!--                <th>Titol</th>-->
                 <th>Dni</th>
                 <th>Nom</th>
                 <th>Data</th>
@@ -24,7 +24,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                 ?>
                 <tr>
                     <td><?php echo $h['refProducte'] ?></td>
-                    <td><?php echo $h['titol'] ?></td>
+<!--                    <td>--><?php //echo $h['titol'] ?><!--</td>-->
                     <td><?php echo $h['dniClient'] ?></td>
                     <td><?php echo $h['nom'] ?></td>
                     <td><?php echo $h['data'] ?></td>

@@ -24,7 +24,10 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                             <img src="<?= base_url(); ?>/views/img/<?php echo $prod['imatge'] ?>" alt="img"
                                  class="imgTable">
                         </td>
-                        <td><input type="text" value="<?php echo $prod['referencia'] ?>" name="productes[<?php echo $comptador ?>][referencia]"></td>
+                        <td>
+                            <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
+                            <input type="text" value="<?php echo $prod['referencia'] ?>" name="productes[<?php echo $comptador ?>][referencia]">
+                        </td>
                         <td><input type="text" value="<?php echo $prod['titol'] ?>" name="productes[<?php echo $comptador ?>][titol] "></td>
                         <td><input type="text" value="<?php echo $prod['descripcio'] ?>" name="productes[<?php echo $comptador ?>][descripcio]"></td>
 
@@ -35,7 +38,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
 <!--                            </form>-->
 
                             <form action="../../controllers/productesController.php?action=elimina" method="post">
-                                <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
+                                <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
                                 <input type="submit" class="eliminaLlista" value="Elimina">
                             </form>
                         </td>

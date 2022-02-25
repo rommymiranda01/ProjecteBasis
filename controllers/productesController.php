@@ -63,7 +63,7 @@ switch ($action){
             $fullPath = $dstFolder . basename($_FILES['foto']["name"]);
             $res = move_uploaded_file($_FILES['foto']['tmp_name'], $fullPath);
             if ($res) {
-                $prod = new Producte( $_POST['referencia'], $_POST['titol'], $_POST['descripcio'], $_FILES['foto']['name']);
+                $prod = new Producte(null, $_POST['referencia'], $_POST['titol'], $_POST['descripcio'], $_FILES['foto']['name']);
                 $con->addProducte($prod);
                 //$_SESSION["resultStore"] = "Producte afegit correctament";
                 header('Location: ../controllers/productesController.php?action=list');
@@ -77,10 +77,11 @@ switch ($action){
     case 'editSave':
         // editem producte
 
-        $referencia = $_POST['referencia'] ?? null;
+        $id = $_POST['id'] ?? null;
         //die(var_dump($referencia));
 
-        $producte = $con->getProducteById($referencia);
+        $producte = $con->getProducteById($id);
+        $producte->setReferencia($_POST['referencia']);
         $producte->setTitol($_POST['titol']);
         $producte->setDescripcio($_POST['descripcio']);
 
@@ -107,10 +108,10 @@ switch ($action){
 
     case 'elimina':
         //esborrem producte
-        $referencia = $_POST['referencia'] ?? null;
+        $id = $_POST['id'] ?? null;
 
-        if (isset($referencia)) {
-            $con->deleteProducteById($referencia);
+        if (isset($id)) {
+            $con->deleteProducteById($id);
             header('Location: ../controllers/productesController.php?action=list');
         }
         break;
@@ -131,9 +132,9 @@ switch ($action){
     case 'editLlista':
         $prod = $_POST['productes'];
 
-        //$prod
+        die(var_dump($prod));
+        //print_r($prod);
 
-        //die(var_dump($prod));
         break;
 
     case 'rank':

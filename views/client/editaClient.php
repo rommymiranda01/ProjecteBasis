@@ -1,16 +1,17 @@
 <?php
 
-$dni = $_POST['dni'] ?? null;
+$id = $_POST['id'] ?? null;
 
 $con = new ClientsServiceImpl();
 
-if (isset($dni)){
-    $client = $con->getUserById($dni);
+if (isset($id)){
+    $client = $con->getUserById($id);
 }
 ?>
 <div class="container">
     <form action="../../controllers/usuarisController.php?action=editSave" enctype="multipart/form-data" method="post">
         <div class="row">
+            <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $client->getId() ?? '' ?>" readonly>
             <div class="col-25">
                 <label for="dni">Dni</label>
             </div>

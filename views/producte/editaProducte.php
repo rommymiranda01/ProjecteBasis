@@ -1,16 +1,17 @@
 <?php
 
-$referencia = $_POST['referencia'] ?? null;
+$id = $_POST['id'] ?? null;
 
 $con = new ProductesServiceImpl();
 
-if (isset($referencia)){
-    $producte = $con->getProducteById($referencia);
+if (isset($id)){
+    $producte = $con->getProducteById($id);
 }
 ?>
 <div class="container">
     <form action="<?=base_url();?>/controllers/productesController.php?action=editSave" method="post">
         <div class="row">
+            <input type="hidden" name="id" id="id" class="form-control" value="<?php echo $producte->getId() ?? '' ?>" readonly>
             <div class="col-25">
                 <label for="referencia">Referencia</label>
             </div>

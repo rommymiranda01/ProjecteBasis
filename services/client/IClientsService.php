@@ -9,7 +9,7 @@ interface IClientsService
     public function  getUserById(String $idClient):Client;
     public function updateUserById(Client $c):bool;
     public function deleteUserById($idClient):bool;
-    public function getHistorialById($dni):array;
+    public function getHistorialById($id):array;
     public function rankClientActiu():array;
     public function checkCred(Client $c) : ?array;
 }

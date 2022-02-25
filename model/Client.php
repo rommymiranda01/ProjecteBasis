@@ -2,6 +2,7 @@
 
 class Client
 {
+    private $id;
     private $dni;
     private $nom;
     private $adreca;
@@ -14,6 +15,7 @@ class Client
     private $rol;
 
     /**
+     * @param $id
      * @param $dni
      * @param $nom
      * @param $adreca
@@ -25,8 +27,9 @@ class Client
      * @param $password
      * @param $rol
      */
-    public function __construct($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password, $rol)
+    public function __construct($id, $dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password, $rol)
     {
+        $this->id = $id;
         $this->dni = $dni;
         $this->nom = $nom;
         $this->adreca = $adreca;
@@ -37,6 +40,22 @@ class Client
         $this->foto = $foto;
         $this->password = $password;
         $this->rol = $rol;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
     /**

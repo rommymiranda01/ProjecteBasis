@@ -79,18 +79,18 @@ class ProductesServiceImpl implements IProductesService
         return false;
     }
 
-    public function getProducteById($referencia): Producte
+    public function getProducteById($id): Producte
     {
         // TODO: Implement getProducteById() method.
         $this->openConnection();
         $producte = null;
         try{
-            $statement = $this->conexio->prepare("SELECT * FROM productes WHERE referencia= ?");
+            $statement = $this->conexio->prepare("SELECT * FROM productes WHERE id= ?");
             $statement->execute(
-                array($referencia)
+                array($id)
             );
             $result = $statement->fetch();
-            $producte = new Producte($result['referencia'],$result['titol'],$result['descripcio'],$result['imatge']);
+            $producte = new Producte($result['id'],$result['referencia'],$result['titol'],$result['descripcio'],$result['imatge']);
             return $producte;
         }catch(PDOException $ex){
             echo "Error: " . $ex;
@@ -104,9 +104,9 @@ class ProductesServiceImpl implements IProductesService
         // TODO: Implement updateProducteById() method.
         $this->openConnection();
         try{
-            $querySql = "UPDATE productes SET titol=?, descripcio=?, imatge=? WHERE referencia=?";
+            $querySql = "UPDATE productes SET referencia=?, titol=?, descripcio=?, imatge=? WHERE id=?";
             $statement = $this->conexio->prepare($querySql);
-            $res = $statement->execute(array($p->getTitol(), $p->getDescripcio(), $p->getImatge(), $p->getReferencia()
+            $res = $statement->execute(array($p->getReferencia(), $p->getTitol(), $p->getDescripcio(), $p->getImatge(), $p->getId()
             ));
             return $res;
         }catch(PDOException $ex){
@@ -116,15 +116,15 @@ class ProductesServiceImpl implements IProductesService
         return false;
     }
 
-    public function deleteProducteById($referencia): bool
+    public function deleteProducteById($id): bool
     {
         // TODO: Implement deleteProducteById() method.
         $this->openConnection();
         try{
-            $querySql = "DELETE FROM productes WHERE referencia=?";
+            $querySql = "DELETE FROM productes WHERE id=?";
             $statement = $this->conexio->prepare($querySql);
             $res = $statement->execute(array(
-                $referencia
+                $id
             ));
 
             return $res;

@@ -3,7 +3,7 @@
 <div class="container">
     <form action="../../controllers/historialController.php?action=save" enctype="multipart/form-data" method="post">
         <div class="row">
-                <input type="hidden" name="referencia" value="<?php echo $_POST['referencia'] ?>">
+                <input type="hidden" name="id" value="<?php echo $_POST['id'] ?>">
         </div>
         <div class="row">
             <div class="col-25">

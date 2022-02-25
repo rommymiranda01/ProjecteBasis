@@ -15,12 +15,12 @@ foreach ($clients  as $c){
             <p class="card-text"><strong>Telefon: </strong><?php echo $c['telefon'] ?></p>
 
             <form action="<?=base_url();?>/controllers/usuarisController.php?action=edit" method="post">
-                <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
+                <input type="hidden" value="<?php echo $c['id'] ?>" name="id">
                 <input type="submit" class="editaLlista" value="Edita">
             </form>
 
             <form action="<?=base_url();?>/controllers/usuarisController.php?action=elimina" method="post">
-                <input type="hidden" value="<?php echo $c['dni'] ?>" name="dni">
+                <input type="hidden" value="<?php echo $c['id'] ?>" name="id">
                 <input type="submit" class="eliminaLlista" value="Elimina">
             </form>
 

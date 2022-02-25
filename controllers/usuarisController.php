@@ -84,7 +84,7 @@ switch ($action) {
             $fullPath = $dstFolder . basename($_FILES['foto']["name"]);
             $res = move_uploaded_file($_FILES['foto']['tmp_name'], $fullPath);
             if ($res) {
-                $c = new Client( $_POST['dni'], $_POST['nom'], $_POST['adreca'], $_POST['codPostal'], $_POST['poble'], $_POST['email'], $_POST['telefon'], $_FILES['foto']['name'], $_POST['password'], 'user');
+                $c = new Client(null, $_POST['dni'], $_POST['nom'], $_POST['adreca'], $_POST['codPostal'], $_POST['poble'], $_POST['email'], $_POST['telefon'], $_FILES['foto']['name'], $_POST['password'], 'user');
                 $con->addUser($c);
                 //header('Location: ../controllers/usuarisController.php?action=list');
                 header('Location: ../../views/login.php');
@@ -98,9 +98,10 @@ switch ($action) {
         break;
 
     case 'editSave':
-        $dni = $_POST['dni'] ?? null;
+        $id = $_POST['id'] ?? null;
         //die(var_dump($referencia));
-        $client = $con->getUserById($dni);
+        $client = $con->getUserById($id);
+        $client->setDni($_POST['dni']);
         $client->setNom($_POST['nom']);
         $client->setAdreca($_POST['adreca']);
         $client->setCodPostal($_POST['codPostal']);
@@ -152,10 +153,10 @@ switch ($action) {
         break;
 
     case 'elimina':
-        $dni = $_POST['dni'] ?? null;
+        $id = $_POST['id'] ?? null;
 
-        if (isset($dni)){
-            $con->deleteUserById($dni);
+        if (isset($id)){
+            $con->deleteUserById($id);
             header('Location: ../controllers/usuarisController.php?action=list');
         }
         break;
@@ -174,6 +175,7 @@ switch ($action) {
         break;
 
     case 'checkLogin':
+        $id = $_POST['id'] ?? null;
         $dni = $_POST['dni'] ?? null;
         $nom = $_POST['nom'] ?? null;
         $adreca = $_POST['adreca'] ?? null;
@@ -185,7 +187,7 @@ switch ($action) {
         $password = $_POST['password'] ?? null;
         $rol = $_POST['rol'] ?? null;
 
-        $userTemp = new Client($dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password,$rol);
+        $userTemp = new Client($id,$dni, $nom, $adreca, $codPostal, $poble, $email, $telefon, $foto, $password,$rol);
         $_SESSION['loggedUser'] = $con->checkCred($userTemp);
         //var_dump($userTemp);
         //var_dump($_SESSION['loggedUser']);

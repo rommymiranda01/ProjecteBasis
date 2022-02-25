@@ -79,19 +79,19 @@ class ClientsServiceImpl implements IClientsService
         return false;
     }
 
-    public function getUserById($dni): Client
+    public function getUserById($id): Client
     {
         // TODO: Implement getUserById() method.
         $this->openConnection();
         $client = null;
         try{
 
-            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE dni= ?");
+            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE id= ?");
             $statement->execute(
-                array($dni)
+                array($id)
             );
             $result = $statement->fetch();
-            $client = new Client($result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto'], $result['password'], $result['rol']);
+            $client = new Client($result['id'],$result['dni'],$result['nom'],$result['adreca'],$result['codPostal'], $result['poble'], $result['email'], $result['telefon'], $result['foto'], $result['password'], $result['rol']);
             return $client;
         }catch(PDOException $ex){
             echo "Error: " . $ex;

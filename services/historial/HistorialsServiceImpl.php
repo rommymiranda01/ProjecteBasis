@@ -120,16 +120,16 @@ class HistorialsServiceImpl implements IHistorialsService
         return false;
     }
 
-    public function getHistorialById($referencia): Historial
+    public function getHistorialById($id): Historial
     {
         // TODO: Implement getHistorialById() method.
         $this->openConnection();
         $historial = null;
         try{
 
-            $statement = $this->conexio->prepare("SELECT * FROM historials WHERE refProducte= ?");
+            $statement = $this->conexio->prepare("SELECT * FROM historials WHERE $id= ?");
             $statement->execute(
-                array($referencia)
+                array($id)
             );
             $result = $statement->fetch();
             $historial = new Historial($result['id'], $result['refProducte'], $result['data'], $result['tipusMov'], $result['dniClient']);

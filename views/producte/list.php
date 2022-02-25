@@ -26,11 +26,11 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                 <td><?php echo $prod['descripcio']?></td>
                 <td>
                     <form action="../../controllers/productesController.php?action=edit" method="post">
-                        <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
+                        <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
                         <input type="submit" class="editaLlista" value="Edit">
                     </form>
                     <form action="../../controllers/productesController.php?action=elimina" method="post">
-                        <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
+                        <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
                         <input type="submit" class="eliminaLlista" value="Elimina">
                     </form>
                 </td>
@@ -57,11 +57,11 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                 <p class="card-text"><strong>Descripcio: </strong><?php echo $prod['descripcio'] ?></p>
 
                 <form action="<?= base_url(); ?>/controllers/historialController.php?action=add" method="post">
-                    <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
+                    <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
                     <input type="submit" class="retorna" value="Lloga">
                 </form>
                 <form action="<?= base_url(); ?>/controllers/historialController.php?action=retornar" method="post">
-                    <input type="hidden" value="<?php echo $prod['referencia'] ?>" name="referencia">
+                    <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
                     <input type="submit" class="retorna" value="Retorna">
                 </form>
             </div>
