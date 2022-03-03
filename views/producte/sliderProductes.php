@@ -2,7 +2,7 @@
 if ($_SESSION['loggedUser']['rol'] == 'admin') {
 ?>
 <div class="ContainerSlide" id="slide1">
-    <h2>Ranking de productes llogats</h2>
+    <h1 class="titol">Ranking de productes llogats</h1>
     <div class="slideshow-container">
         <?php
         foreach ($rankP as $p) {
@@ -28,7 +28,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
 $ranking = 1;
 ?>
 <div class="ContainerSlide" id="slide2">
-    <h2>Ranking de clients</h2>
+    <h1 class="titol">Ranking de clients</h1>
     <div class="slideshow-container">
         <?php
         foreach ($rankC as $c) {
@@ -51,7 +51,7 @@ $ranking = 1;
     <?php
 }elseif ($_SESSION['loggedUser']['rol'] == 'user'){
 ?>
-    <h1>Ranking Productes</h1>
+    <h1 class="titol">Ranking Productes</h1>
     <div class="owl-carousel owl-theme">
 
         <?php
@@ -73,7 +73,7 @@ $ranking = 1;
     </div>
 
 
-<h1>Ranking clients</h1>
+<h1 class="titol">Ranking clients</h1>
 <div class="owl-carousel owl-theme">
     <?php
     $rank = 1;

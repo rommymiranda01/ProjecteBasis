@@ -304,10 +304,10 @@ select{
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 25%;
+    top: 35%;
     width: auto;
-    padding: 16px;
-    margin-top: 30px;
+    padding: 40px;
+    margin-top: 50px;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -545,6 +545,20 @@ a {
 
 .card1-text{
     margin-bottom: 5%;
+}
+
+.titol{
+    margin-left: 30px;
+    color: #4575b6;
+}
+
+.editaMassiu{
+    margin-left: 30px;
+}
+
+.logoNav{
+    width: 30px;
+    height: 30px;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 1000px){

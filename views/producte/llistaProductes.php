@@ -16,7 +16,6 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                 </thead>
                 <tbody id="productes">
                 <?php
-                $comptador = 1;
                 foreach ($producteList as $prod) {
                     ?>
                     <tr>
@@ -26,10 +25,10 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                         </td>
                         <td>
                             <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
-                            <input type="text" value="<?php echo $prod['referencia'] ?>" name="productes[<?php echo $comptador ?>][referencia]">
+                            <input type="text" value="<?php echo $prod['referencia'] ?>" name="productes[<?php echo $prod['id'] ?>][referencia]">
                         </td>
-                        <td><input type="text" value="<?php echo $prod['titol'] ?>" name="productes[<?php echo $comptador ?>][titol] "></td>
-                        <td><input type="text" value="<?php echo $prod['descripcio'] ?>" name="productes[<?php echo $comptador ?>][descripcio]"></td>
+                        <td><input type="text" value="<?php echo $prod['titol'] ?>" name="productes[<?php echo $prod['id'] ?>][titol] "></td>
+                        <td><input type="text" value="<?php echo $prod['descripcio'] ?>" name="productes[<?php echo $prod['id'] ?>][descripcio]"></td>
 
                         <td>
 <!--                            <form action="../../controllers/productesController.php?action=edit" method="post">-->
@@ -44,7 +43,6 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                         </td>
                     </tr>
                     <?php
-                    $comptador++;
                 }
                 ?>
                 </tbody>

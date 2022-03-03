@@ -3,7 +3,7 @@ $ranking = 1;
 if ($_SESSION['loggedUser']['rol'] == 'admin') {
     ?>
     <div class="app">
-        <h2>Rank Clients</h2>
+        <h2 class="titol">Rank Clients</h2>
         <table>
             <tr>
                 <td><strong>Rank</strong></td>

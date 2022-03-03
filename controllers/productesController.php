@@ -78,7 +78,6 @@ switch ($action){
         // editem producte
 
         $id = $_POST['id'] ?? null;
-        //die(var_dump($referencia));
 
         $producte = $con->getProducteById($id);
         $producte->setReferencia($_POST['referencia']);
@@ -132,9 +131,19 @@ switch ($action){
     case 'editLlista':
         $prod = $_POST['productes'];
 
-        die(var_dump($prod));
-        //print_r($prod);
+        foreach ($prod as $producte){
+            $p =  $con->getProducteById($producte->getId());
+//            $p->setReferencia();
+//            $p->setDescripcio();
+//            $p->setTitol();
 
+//            die(var_dump($p));
+//            print_r($p);
+
+        }
+
+        //die(var_dump($prod));
+        //print_r($prod);
         break;
 
     case 'rank':

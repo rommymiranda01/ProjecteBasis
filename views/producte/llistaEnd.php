@@ -2,7 +2,7 @@
 if ($_SESSION['loggedUser']['rol'] == 'admin') {
     ?>
     <div class="app">
-        <h2>Llista d'endarreriments</h2>
+        <h2 class="titol">Llista d'endarreriments</h2>
         <table>
             <thead>
             <tr>

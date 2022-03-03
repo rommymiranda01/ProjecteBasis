@@ -27,7 +27,9 @@ $con = new ClientsServiceImpl();
 
 
 <header class="header">
-    <a href="../controllers/portadaController.php" class="logo">Botiga RM</a>
+    <a href="../controllers/portadaController.php" class="logo">
+        <img src="<?=base_url();?>/views/img/shop.png" alt="shop" class="logoNav">
+        Botiga RM</a>
     <?php
     include 'templates/navbar.php';
     ?>
