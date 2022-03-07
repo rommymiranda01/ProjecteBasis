@@ -1,48 +1,55 @@
 <?php
 if ($_SESSION['loggedUser']['rol'] == 'admin') {
-?>
+    ?>
     <div id="app">
-        <table>
-            <thead>
-            <tr>
-                <th>Imatge</th>
-                <th>Referencia</th>
-                <th>Titol</th>
-                <th>Descripcio</th>
-                <th>Opcions</th>
-            </tr>
-            </thead>
-            <tbody id="productes">
-            <?php
+        <form action="<?= base_url(); ?>/controllers/productesController.php?action=listProductes" method="post">
+            <input type="submit" value="Edita Total" class="editaMassiu">
+            <table>
+                <thead>
+                <tr>
+                    <th>Imatge</th>
+                    <th>Referencia</th>
+                    <th>Titol</th>
+                    <th>Descripcio</th>
+                    <th>Opcions</th>
+                </tr>
+                </thead>
+                <tbody id="productes">
+                <?php
                 foreach ($productes as $prod) {
-            ?>
-            <tr>
-<!--                <td>--><?php //echo $prod['imatge']?><!--</td>-->
-                <td>
-                    <img src="<?= base_url(); ?>/views/img/<?php echo $prod['imatge'] ?>" alt="img"  class="imgTable">
-                </td>
-                <td><?php echo $prod['referencia']?></td>
-                <td><?php echo $prod['titol']?></td>
-                <td><?php echo $prod['descripcio']?></td>
-                <td>
-                    <form action="../../controllers/productesController.php?action=edit" method="post">
-                        <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
-                        <input type="submit" class="editaLlista" value="Edit">
-                    </form>
-                    <form action="../../controllers/productesController.php?action=elimina" method="post">
-                        <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
-                        <input type="submit" class="eliminaLlista" value="Elimina">
-                    </form>
-                </td>
-            </tr>
-            <?php
+                    ?>
+                    <tr>
+                        <!--                <td>--><?php //echo $prod['imatge']?><!--</td>-->
+                        <td>
+                            <img src="<?= base_url(); ?>/views/img/<?php echo $prod['imatge'] ?>" alt="img"
+                                 class="imgTable">
+                        </td>
+                        <td><?php echo $prod['referencia'] ?></td>
+                        <td><?php echo $prod['titol'] ?></td>
+                        <td><?php echo $prod['descripcio'] ?></td>
+                        <td>
+                            <form action="<?= base_url(); ?>/controllers/productesController.php?action=elimina" method="post">
+                            <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
+                            </form>
+                            <form action="<?= base_url(); ?>/controllers/productesController.php?action=elimina" method="post">
+                                <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
+                                <input type="submit" class="eliminaLlista" value="Elimina">
+                            </form>
+                            <form action="<?= base_url(); ?>/controllers/productesController.php?action=edit" method="post">
+                                <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
+                                <input type="submit" class="editaLlista" value="Edit">
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
                 }
-             ?>
-            </tbody>
-        </table>
+                ?>
+                </tbody>
+            </table>
+        </form>
     </div>
 
-<?php
+    <?php
 }else if ($_SESSION['loggedUser']['rol'] == 'user') {
 ?>
 <div class="containerCards">

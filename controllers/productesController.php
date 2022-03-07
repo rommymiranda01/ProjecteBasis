@@ -131,19 +131,20 @@ switch ($action){
     case 'editLlista':
         $prod = $_POST['productes'];
 
-        foreach ($prod as $producte){
-            $p =  $con->getProducteById($producte->getId());
-//            $p->setReferencia();
-//            $p->setDescripcio();
-//            $p->setTitol();
+        foreach ($prod as $id => $producte){
 
-//            die(var_dump($p));
-//            print_r($p);
+            $p =  $con->getProducteById($id);
+            $p->setReferencia($producte['referencia']);
+            $p->setTitol($producte['titol']);
+            $p->setDescripcio($producte['descripcio']);
 
+            $con->updateProducte($p);
         }
 
-        //die(var_dump($prod));
-        //print_r($prod);
+        header('Location: ../controllers/productesController.php?action=list');
+
+//        die(var_dump($prod));
+//        print_r($prod);
         break;
 
     case 'rank':

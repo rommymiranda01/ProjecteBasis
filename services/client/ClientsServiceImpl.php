@@ -183,9 +183,9 @@ class ClientsServiceImpl implements IClientsService
         // TODO: Implement checkCred() method.
         $this->openConnection();
         try {
-            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE nom=? and password=?");
+            $statement = $this->conexio->prepare("SELECT * FROM clients WHERE email=? and password=?");
             $statement->execute(
-                array($c->getNom(), $c->getPassword())
+                array($c->getEmail(), $c->getPassword())
             );
             $result = $statement->fetch();
             if (!$result){

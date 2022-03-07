@@ -3,7 +3,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
     ?>
     <div id="app">
         <form action="<?=base_url();?>/controllers/productesController.php?action=editLlista" method="post">
-            <input type="submit" value="EditaMassiu">
+            <input type="submit" value="Guarda Total" class="editaMassiu">
             <table>
                 <thead>
                 <tr>
@@ -24,7 +24,7 @@ if ($_SESSION['loggedUser']['rol'] == 'admin') {
                                  class="imgTable">
                         </td>
                         <td>
-                            <input type="hidden" value="<?php echo $prod['id'] ?>" name="id">
+<!--                            <input type="hidden" value="--><?php //echo $prod['id'] ?><!--" name="id">-->
                             <input type="text" value="<?php echo $prod['referencia'] ?>" name="productes[<?php echo $prod['id'] ?>][referencia]">
                         </td>
                         <td><input type="text" value="<?php echo $prod['titol'] ?>" name="productes[<?php echo $prod['id'] ?>][titol] "></td>

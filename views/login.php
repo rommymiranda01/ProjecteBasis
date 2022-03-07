@@ -13,8 +13,8 @@
     <h2>Login</h2>
     <form id="login-form" class="form" action="../controllers/usuarisController.php?action=checkLogin" method="post">
         <div class="user-box">
-            <input type="text" name="nom" id="nom" required="">
-            <label>Nom</label>
+            <input type="text" name="email" id="email" required="">
+            <label>Email</label>
         </div>
         <div class="user-box">
             <input type="password" name="password" id="password" required="">
